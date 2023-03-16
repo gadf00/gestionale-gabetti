@@ -1,0 +1,23 @@
+
+
+@import '../node_modules/bootstrap/scss/_functions';
+@import '../node_modules/bootstrap/scss/_variables';
+
+$card-bg: #fff;
+$card-box-shadow: 0 2px 4px rgba(15,34,58,.12) !default;
+$card-border-color: #fff;
+
+$custom-theme-colors: (
+    "altblue": #5b73e8,
+    "altwhite": #f5f6f8,
+    "altprimary": #303442,
+    "textprimary": #898fa9,
+    "altlight": #343747,
+    "altsecondary":#2b2e3b,
+    "alttext": #FFFFFFE6,
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+//import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';

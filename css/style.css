@@ -1,0 +1,24 @@
+body{
+    color: #fff ;
+}
+
+a{
+    color:#898fa9 !important;
+}
+
+a:hover{
+    color: #5b73e8 !important;
+}
+
+label{
+    color: #898fa9;
+}
+
+.list{
+    width: 100%;
+    position: absolute;
+    max-height: 400px;
+    overflow-y: scroll;
+    z-index: 1;
+    background-color: #303442;
+}
