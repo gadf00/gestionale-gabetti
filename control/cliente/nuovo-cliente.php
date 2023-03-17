@@ -50,4 +50,5 @@
             echo 'Errore nell\'inserimento del messaggio: ' . $e->getMessage();
             exit;
         }
+        $db->close();
 ?>

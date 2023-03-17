@@ -1,6 +1,5 @@
 <?php
     session_start();
-
     if(!isset($_SESSION['username'])) {
         // la sessione dell'utente non è presente, redirect alla pagina di login
         header("Location: login.php");
@@ -131,7 +130,7 @@
                         <form class="mb-3 row g-4 form-floating needs-validation" id="anagrafica" novalidate>
                           <div class="col-12 m-auto">
                             <div class="form-check form-switch mt-4 no">
-                              <input class="form-check-input" name="storico" type="checkbox" value="1" id="storico" formnovalidate>
+                              <input class="form-check-input" name="storico" type="checkbox" value="1" id="storico">
                               <label class="form-check-label" for="storico">
                                 Storico
                               </label>
@@ -240,7 +239,7 @@
                           </div>
                           <div class="col-md-5 col-12">
                             <div class="form-floating">
-                              <input type="text" class="form-control" id="codice_fiscale" name="codice_fiscale" placeholder="Inserisci Codice Fiscale" pattern="^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$">
+                              <input type="text" class="form-control" id="codice_fiscale" name="codice_fiscale" placeholder="Inserisci Codice Fiscale" required pattern="^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$">
                               <label for="codice_fiscale">Codice Fiscale</label>
                               <div class="valid-feedback">
                                 Inserimento corretto!
@@ -303,7 +302,7 @@
                             </div>
                           </div>
                           <div class="col">
-                            <button type="submit" name="nuovo_cliente" class="btn btn-altblue text-white mb-3">
+                            <button type="submit" class="btn btn-altblue text-white mb-3">
                               Salva Cliente
                             </button>
                           </div>
@@ -933,7 +932,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="scripts/validazione-cliente.js"></script>
     <script src="scripts/read-comuni.js"></script>
+    <script src="scripts/validazione-cliente.js"></script>
     <script src="scripts/nuovo-cliente.js"></script>
 </html>
