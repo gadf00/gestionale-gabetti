@@ -396,7 +396,7 @@
         <div class="card ">
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-hover">
+              <table class="table table-hover" id="clienti-table">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
@@ -425,126 +425,6 @@
                         </button>
                         <ul class="dropdown-menu bg-altblue">
                           <li><button class="dropdown-item text-white" type="button">Modifica</button></li>
-                          <li><button class="dropdown-item" type="button">Elimina</button></li>
-                          <li><button class="dropdown-item" type="button">Stampa</button></li>
-                          <li><button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#richiesteUtente">Richieste</button></li>
-                          <li><button class="dropdown-item" type="button">Proposte Visite</button></li>
-                          <li><button class="dropdown-item" type="button">Invia E-mail</button></li>
-                          <li><button class="dropdown-item" type="button">Stampa Scheda</button></li>
-                          <li><button class="dropdown-item" type="button">Documenti</button></li>
-                          <li><button class="dropdown-item" type="button">Ricerca Immobili</button></li>
-                          <li><button class="dropdown-item" type="button">Altri Dati</button></li>
-                          <li><button class="dropdown-item" type="button">Contatti</button></li>
-                          <li><button class="dropdown-item" type="button">Siti Web</button></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Gaetano De Filippo</td>
-                    <td>example@gmail.com</td>
-                    <td>3312294330</td>
-                    <td></td>
-                    <td>2023-03-01</td>
-                    <td>300</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-altblue dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Operazioni
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><button class="dropdown-item" type="button">Modifica</button></li>
-                          <li><button class="dropdown-item" type="button">Elimina</button></li>
-                          <li><button class="dropdown-item" type="button">Stampa</button></li>
-                          <li><button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#richiesteUtente">Richieste</button></li>
-                          <li><button class="dropdown-item" type="button">Proposte Visite</button></li>
-                          <li><button class="dropdown-item" type="button">Invia E-mail</button></li>
-                          <li><button class="dropdown-item" type="button">Stampa Scheda</button></li>
-                          <li><button class="dropdown-item" type="button">Documenti</button></li>
-                          <li><button class="dropdown-item" type="button">Ricerca Immobili</button></li>
-                          <li><button class="dropdown-item" type="button">Altri Dati</button></li>
-                          <li><button class="dropdown-item" type="button">Contatti</button></li>
-                          <li><button class="dropdown-item" type="button">Siti Web</button></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Gaetano De Filippo</td>
-                    <td>example@gmail.com</td>
-                    <td>3312294330</td>
-                    <td></td>
-                    <td>2023-03-01</td>
-                    <td>300</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-altblue dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Operazioni
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><button class="dropdown-item" type="button">Modifica</button></li>
-                          <li><button class="dropdown-item" type="button">Elimina</button></li>
-                          <li><button class="dropdown-item" type="button">Stampa</button></li>
-                          <li><button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#richiesteUtente">Richieste</button></li>
-                          <li><button class="dropdown-item" type="button">Proposte Visite</button></li>
-                          <li><button class="dropdown-item" type="button">Invia E-mail</button></li>
-                          <li><button class="dropdown-item" type="button">Stampa Scheda</button></li>
-                          <li><button class="dropdown-item" type="button">Documenti</button></li>
-                          <li><button class="dropdown-item" type="button">Ricerca Immobili</button></li>
-                          <li><button class="dropdown-item" type="button">Altri Dati</button></li>
-                          <li><button class="dropdown-item" type="button">Contatti</button></li>
-                          <li><button class="dropdown-item" type="button">Siti Web</button></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Gaetano De Filippo</td>
-                    <td>example@gmail.com</td>
-                    <td>3312294330</td>
-                    <td></td>
-                    <td>2023-03-01</td>
-                    <td>300</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-altblue dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Operazioni
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><button class="dropdown-item" type="button">Modifica</button></li>
-                          <li><button class="dropdown-item" type="button">Elimina</button></li>
-                          <li><button class="dropdown-item" type="button">Stampa</button></li>
-                          <li><button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#richiesteUtente">Richieste</button></li>
-                          <li><button class="dropdown-item" type="button">Proposte Visite</button></li>
-                          <li><button class="dropdown-item" type="button">Invia E-mail</button></li>
-                          <li><button class="dropdown-item" type="button">Stampa Scheda</button></li>
-                          <li><button class="dropdown-item" type="button">Documenti</button></li>
-                          <li><button class="dropdown-item" type="button">Ricerca Immobili</button></li>
-                          <li><button class="dropdown-item" type="button">Altri Dati</button></li>
-                          <li><button class="dropdown-item" type="button">Contatti</button></li>
-                          <li><button class="dropdown-item" type="button">Siti Web</button></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Gaetano De Filippo</td>
-                    <td>example@gmail.com</td>
-                    <td>3312294330</td>
-                    <td></td>
-                    <td>2023-03-01</td>
-                    <td>300</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-altblue dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Operazioni
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><button class="dropdown-item btn-altblue" type="button">Modifica</button></li>
                           <li><button class="dropdown-item" type="button">Elimina</button></li>
                           <li><button class="dropdown-item" type="button">Stampa</button></li>
                           <li><button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#richiesteUtente">Richieste</button></li>
@@ -935,4 +815,5 @@
     <script src="scripts/read-comuni.js"></script>
     <script src="scripts/validazione-cliente.js"></script>
     <script src="scripts/nuovo-cliente.js"></script>
+    <script src="scripts/lista-clienti.js"></script>
 </html>

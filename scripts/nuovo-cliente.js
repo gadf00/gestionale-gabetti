@@ -75,11 +75,17 @@ $(document).ready(function () {
         success: function (response) {
           // Gestisci la risposta del server
           $("#staticBackdrop").modal("hide");
-          Swal.fire(
-            "Aggiunto!",
-            "Nuovo cliente aggiunto correttamente!",
-            "success"
-          );
+          Swal.fire({
+            title: "Cliente aggiunto!",
+            text: "Il cliente è stato aggiunto correttamente!",
+            icon: "success",
+            confirmButtonText: "OK"
+          }
+          ).then((result) => {
+            if (result.isConfirmed) {
+              location.reload();
+            }
+          });
           console.log(response);
         },
         error: function (xhr, status, error) {
