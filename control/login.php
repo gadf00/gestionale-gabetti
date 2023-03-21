@@ -3,7 +3,7 @@
 session_start();
 // Verifica se l'utente è già loggato, in caso affermativo, lo reindirizza alla home page
 if (isset($_SESSION['username'])) {
-    header('Location: ../clients.html');
+    header('Location: ../clients');
     exit;
 }
 // include database configuration
@@ -33,11 +33,11 @@ if (isset($_POST['login'])) {
     if ($user && password_verify($password, $user['password'])) {
         // Imposta la sessione e reindirizza l'utente alla home page
         $_SESSION['username'] = $username;
-        header('Location: ../clients.php');
+        header('Location: ../clients');
         exit;
     } else {
         $_SESSION["error"] = "Username o Password errati";
-        header("location: ../login.php");
+        header("location: ../login");
         exit;
     }
 }

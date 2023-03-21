@@ -1,13 +1,3 @@
-<?php
-    session_start();
-    if(!isset($_SESSION['username'])) {
-        // la sessione dell'utente non è presente, redirect alla pagina di login
-        header("Location: login.php");
-        exit;
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
