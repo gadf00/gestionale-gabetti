@@ -88,248 +88,6 @@
           </button>
         </div>
 
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content ">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5 text-altblue" id="staticBackdropLabel">Nuovo Cliente</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="card bg-white">
-                  <div class="card-header">
-                    <ul class="nav nav-pills nav-fill gap-2 p-1 small rounded-2" id="pillNav2" role="tablist">
-                      <li class="nav-item" role="presentation">
-                        <button class="nav-link active rounded-2" id="anagrafica-tab" data-bs-toggle="pill" data-bs-target="#pills-anagrafica" type="button" role="tab" aria-controls="pills-anagrafica" aria-selected="true">Anagrafica</button>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <button class="nav-link rounded-2" id="altridati-tab" data-bs-toggle="pill" data-bs-target="#pills-altridati" type="button" role="tab" aria-controls="pills-altridati" aria-selected="false">Altri Dati</button>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <button class="nav-link rounded-2" id="documenti-tab" data-bs-toggle="pill" data-bs-target="#pills-documenti" type="button" role="tab" aria-controls="pills-documenti" aria-selected="false">Documenti</button>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <button class="nav-link rounded-2" id="postit-tab" data-bs-toggle="pill" data-bs-target="#pills-postit" type="button" role="tab" aria-controls="pills-postit" aria-selected="false">Post It</button>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="card-body">
-                    <div class="tab-content" id="pills-tabContent">
-                      <div class="tab-pane fade show active" id="pills-anagrafica" role="tabpanel" aria-labelledby="anagrafica-tab" tabindex="0">
-                        <p class="fs-5 text-altblue">Anagrafica Utente</p>
-                        <form class="mb-3 row g-4 form-floating needs-validation" id="anagrafica" novalidate>
-                          <div class="col-12 m-auto">
-                            <div class="form-check form-switch mt-4 no">
-                              <input class="form-check-input" name="storico" type="checkbox" value="1" id="storico">
-                              <label class="form-check-label" for="storico">
-                                Storico
-                              </label>
-                            </div>
-                          </div>
-                          <div class="col-12 col-sm-6">
-                            <div class="form-floating">
-                              <input type="text" class="form-control" name="nominativo" id="nominativo" placeholder="Nominativo Cliente" pattern="^[\p{L} ]+$" required>
-                              <label for="nominativo">Nominativo</label>
-                              <div class="valid-feedback">
-                                Inserimento corretto!
-                              </div>
-                              <div class="invalid-feedback">
-                                Nominativo non può essere vuoto, contenere caratteri speciali o numeri.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-sm-6">
-                            <div class="form-floating">
-                              <input type="date" class="form-control" name="data_registrazione" id="data_registrazione" placeholder="Data Registrazione" required pattern="^(?:(?:31\/(?:0?[13578]|1[02]))\/|(?:(?:29|30)\/(?:0?[1,3-9]|1[0-2])\/))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29\/0?2\/(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:16|[2468][048]|[3579][26])00)))$|^(?:0?[1-9]|1\d|2[0-8])\/(?:0?[1-9]|1[0-2])\/(?:(?:1[6-9]|[2-9]\d)?\d{2})$">
-                              <label for="data_registrazione">Data Registrazione</label>
-                              <div class="valid-feedback">
-                                Inserimento corretto!
-                              </div>
-                              <div class="invalid-feedback">
-                                Data Registrazione non può essere vuoto e deve essere del formato gg/mm/aaaa.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-lg-4">
-                            <div class="form-floating">
-                              <input type="text" class="form-control" name="indirizzo" id="indirizzo" placeholder="Inserisci Indirizzo" required pattern="^[A-Za-zàèéìòù\s]+(\s+(di|del|della|dei|degli|delle)\s+[A-Za-zàèéìòù\s]+)?(?:,\s*\d{1,4})?([A-Za-z]{0,1}\/[A-Za-z]{0,1}\s*)?$">
-                              <label for="indirizzo">Indirizzo</label>
-                              <div class="valid-feedback">
-                                Inserimento corretto!
-                              </div>
-                              <div class="invalid-feedback">
-                                Indirizzo non può essere vuoto, esempi: "Via Roma 1", "Corso di Porta Ticinese 72/A", "Via Giuseppe Garibaldi, 17".
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-4">
-                            <div class="form-floating">
-                              <input type="text" class="form-control" id="localita" name="localita" placeholder="Inserisci Località" required>
-                              <label for="localita">Località</label>
-                              <div class="valid-feedback">
-                                Inserimento corretto!
-                              </div>
-                              <div class="invalid-feedback">
-                                Località non può essere vuota.
-                              </div>
-                              <div class="result-localita">
-                                <ul class="list">
-
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-3 col-lg-2">
-                            <div class="form-floating">
-                              <input disabled type="text" class="form-control" id="cap" name="cap" placeholder="Inserisci CAP">
-                              <label for="cap">CAP</label>
-                            </div>
-                          </div>
-                          <div class="col-12 col-md-3 col-lg-2">
-                            <div class="form-floating">
-                              <input disabled type="text" class="form-control" id="provincia" name="provincia" placeholder="Inserisci Provincia">
-                              <label for="provincia">Provincia</label>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="form-floating">
-                              <input type="tel" class="form-control" id="telefono1" name="telefono1" placeholder="Inserisci Telefono 1">
-                              <label for="telefono1">Telefono Fisso</label>
-                              <div class="valid-feedback">
-                                Inserimento corretto!
-                              </div>
-                              <div class="invalid-feedback">
-                                Formato per Telefono Fisso non valido.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="form-floating">
-                              <input type="text" class="form-control" id="cellulare1" name="cellulare1" placeholder="Inserisci Telefono 2">
-                              <label for="cellulare1">Cellulare 1</label>
-                              <div class="valid-feedback">
-                                Inserimento corretto!
-                              </div>
-                              <div class="invalid-feedback">
-                                Formato per Cellulare non valido.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="form-floating">
-                              <input type="text" class="form-control" id="cellulare2" name="cellulare2" placeholder="Inserisci Telefono 3">
-                              <label for="cellulare2">Cellulare 2</label>
-                              <div class="valid-feedback">
-                                Inserimento corretto!
-                              </div>
-                              <div class="invalid-feedback">
-                                Formato per Cellulare non valido.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-5 col-12">
-                            <div class="form-floating">
-                              <input type="text" class="form-control" id="codice_fiscale" name="codice_fiscale" placeholder="Inserisci Codice Fiscale" required pattern="^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$">
-                              <label for="codice_fiscale">Codice Fiscale</label>
-                              <div class="valid-feedback">
-                                Inserimento corretto!
-                              </div>
-                              <div class="invalid-feedback">
-                                Formato Codice Fiscale non valido.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-8 col-md-4">
-                            <div class="form-floating">
-                              <input type="email" class="form-control" id="email" name="email" placeholder="Inserisci Email" required>
-                              <label for="email">Email</label>
-                              <div class="valid-feedback">
-                                Inserimento corretto!
-                              </div>
-                              <div class="invalid-feedback">
-                                Formato Email non valido.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-4 col-md-3 d-flex align-items-center">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="mailing" name="mailing">
-                              <label class="form-check-label" for="mailinig">
-                                Mailing
-                              </label>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-floating">
-                              <input type="text" class="form-control" id="professione" name="professione" placeholder="Inserisci Professione">
-                              <label for="professione">Professione</label>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-floating">
-                              <input type="text" class="form-control" id="acquisitore" name="acquisitore" placeholder="Inserisci Acquisitore">
-                              <label for="acquisitore">Acquisitore</label>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-floating">
-                              <input type="text" class="form-control" id="segnalatore" name="segnalatore" placeholder="Inserisci Segnalatore">
-                              <label for="segnalatore">Segnalatore</label>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-floating">
-                              <input type="text" class="form-control" id="note" name="note" placeholder="Inserisci Note">
-                              <label for="note">Note</label>
-                            </div>
-                          </div>
-                          <div class="col-12 m-auto">
-                            <div class="form-check mt-3">
-                              <input class="form-check-input" type="checkbox" value="1" id="autorizzazione" name="autorizzazione">
-                              <label class="form-check-label" for="autorizzazione">
-                                Autorizzazione concesso al trattamento dei dati personali
-                              </label>
-                            </div>
-                          </div>
-                          <div class="col">
-                            <button type="submit" class="btn btn-altblue text-white mb-3">
-                              Salva Cliente
-                            </button>
-                          </div>
-                        </form>
-                      </div>
-                      <div class="tab-pane fade" id="pills-altridati" role="tabpanel" aria-labelledby="altridati-tab" tabindex="0">
-                        <p class="fs-5 text-altblue">Altri Dati Utente</p>
-                      </div>
-                      <div class="tab-pane fade" id="pills-documenti" role="tabpanel" aria-labelledby="documenti-tab" tabindex="0">
-                        <p class="fs-5 text-altblue">Documenti Utente</p>
-                      </div>
-                      <div class="tab-pane fade" id="pills-postit" role="tabpanel" aria-labelledby="postit-tab" tabindex="0">
-                        <p class="fs-5 text-altblue">Post It Utente</p>
-                        <form>
-                          <div class="row mb-3 g-3">
-                            <div class="col-12">
-                              <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                <label for="floatingTextarea2">Comments</label>
-                              </div>
-                            </div>
-                            <div class="col-12">
-                              <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                <label for="floatingTextarea2">Comments</label>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div class="card mb-4 ">
           <div class="card-body">
@@ -338,25 +96,25 @@
               <div class="row row-cols-lg-6 row-cols-md-3 row-cols-2 g-2">
                 <div class="col">
                   <div class="form-floating">
-                    <input type="text" class="form-control" placeholder="Ricerca" id="ricerca-text">
+                    <input type="text" class="form-control" id="inputPassword" placeholder="Ricerca" id="ricerca-text">
                     <label for="inputPassword">Ricerca</label>
                   </div>
                 </div>
                 <div class="col m-auto">
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="ricerca-storico">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" id="ricerca-storico">
                     <label class="form-check-label" for="flexSwitchCheckDefault">Includi Storico</label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" checked id="ricerca-no">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked id="ricerca-no">
                     <label class="form-check-label" for="flexRadioDefault1">
                       No
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="ricerca-si">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" id="ricerca-si">
                     <label class="form-check-label" for="flexRadioDefault2">
                       Sì
                     </label>
@@ -364,13 +122,13 @@
                 </div>
                 <div class="col">
                   <div class="form-floating">
-                    <input type="date" class="form-control" placeholder="Dalla data" id="ricerca-dalladata">
+                    <input type="date" class="form-control" id="inputPassword" placeholder="Dalla data" id="ricerca-dalladata">
                     <label for="inputPassword">Dalla Data</label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-floating">
-                    <input type="date" class="form-control" placeholder="Alla data" id="ricerca-alladata">
+                    <input type="date" class="form-control" id="inputPassword" placeholder="Alla data" id="ricerca-alladata">
                     <label for="inputPassword">Alla Data</label>
                   </div>
                 </div>
@@ -395,6 +153,36 @@
                   </tr>
                 </thead>
                 <tbody class="table-group-divider ">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Gaetano De Filippo</td>
+                    <td>example@gmail.com</td>
+                    <td>3312294330</td>
+                    <td></td>
+                    <td>2023-03-01</td>
+                    <td>300</td>
+                    <td>
+                      <div class="dropdown">
+                        <button class="btn btn-altblue dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Operazioni
+                        </button>
+                        <ul class="dropdown-menu bg-altblue">
+                          <li><button class="dropdown-item text-white" type="button">Modifica</button></li>
+                          <li><button class="dropdown-item" type="button">Elimina</button></li>
+                          <li><button class="dropdown-item" type="button">Stampa</button></li>
+                          <li><button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#richiesteUtente">Richieste</button></li>
+                          <li><button class="dropdown-item" type="button">Proposte Visite</button></li>
+                          <li><button class="dropdown-item" type="button">Invia E-mail</button></li>
+                          <li><button class="dropdown-item" type="button">Stampa Scheda</button></li>
+                          <li><button class="dropdown-item" type="button">Documenti</button></li>
+                          <li><button class="dropdown-item" type="button">Ricerca Immobili</button></li>
+                          <li><button class="dropdown-item" type="button">Altri Dati</button></li>
+                          <li><button class="dropdown-item" type="button">Contatti</button></li>
+                          <li><button class="dropdown-item" type="button">Siti Web</button></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
