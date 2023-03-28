@@ -28,11 +28,45 @@ $(document).ready(function(){
     const ricercaAllaData = document.getElementById('ricerca-alladata');
 
     let valoreRicerca = '';
-    let valoreStorico = false;
+    let valoreStorico = 0;
     let valoreNo = true;
     let valoreSi = false;
     let valoreDalla = '';
     let valoreAlla = '';
+
+    $('.elimina-cliente').click(function(){
+        var idCliente = $(this).attr('data-id');
+        $.post('control/cliente/elimina-cliente.php',{id:idCliente}, function(response){
+            if(response == "eliminato"){
+                Swal.fire({
+                    title: "Cliente eliminato!",
+                    text: "Il cliente è stato eliminato correttamente!",
+                    icon: "success",
+                    confirmButtonText: "OK"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                      location.reload();
+                    }
+                  });
+            }
+            else if(response == "errore"){
+                Swal.fire({
+                    title: "Cliente non eliminato!",
+                    text: "Si è verificato un errore durate l'eliminazione del cliente",
+                    icon: "error",
+                    confirmButtonText: "OK"
+                });
+            }
+            else{
+                Swal.fire({
+                    title: "Cliente non eliminato!",
+                    text: "Il cliente che si vuole eliminare non esiste",
+                    icon: "error",
+                    confirmButtonText: "OK"
+                });
+            }
+        })
+    })
 
 
     ricercaText.addEventListener('input', function() {
@@ -41,7 +75,11 @@ $(document).ready(function(){
     });
 
     ricercaStorico.addEventListener('input', function() {
-        valoreStorico = ricercaStorico.checked;
+        if(ricercaStorico.checked){
+            valoreStorico = 1;
+        }else{
+            valoreStorico = 0;
+        }
         gestisciRicerca(table,clienti,valoreRicerca, valoreStorico, valoreNo, valoreDalla, valoreAlla);
     });
     ricercaNo.addEventListener('input', function() {
@@ -63,9 +101,18 @@ $(document).ready(function(){
 function gestisciRicerca(table,clienti,valoreRicerca, valoreStorico, valoreNo, valoreDalla, valoreAlla) {
     table.innerHTML = '';
     clienti.forEach(cliente =>{
-        if(cliente.nominativo.toLowerCase().includes(valoreRicerca.toLowerCase())){
-            aggiungiRigaCliente(table,cliente);
-        }     
+        if(cliente.nominativo.toLowerCase().includes(valoreRicerca.toLowerCase()) || valoreRicerca == ""){
+            if(cliente.storico == valoreStorico || valoreStorico == false){
+                var date1 = new Date(cliente.data_registrazione);
+                var date2 = new Date(valoreDalla);
+                var date3 = new Date(valoreAlla);
+                if(date1 >= date2 || valoreDalla == ''){
+                    if(date1 <= date3 || valoreAlla == ''){
+                        aggiungiRigaCliente(table,cliente);
+                    }
+                }
+            }
+        }  
     });
 }
 
@@ -86,8 +133,8 @@ function aggiungiRigaCliente(table,cliente){
                     "Operazioni"+
                 "</button>"+
                 "<ul class='dropdown-menu bg-altblue'>"+
-                    "<li><button class='dropdown-item text-white' type='button'>Modifica</button></li>"+
-                    "<li><button class='dropdown-item' type='button'>Elimina</button></li>"+
+                    "<li><a href='./control/cliente/redirect-modifica-cliente.php?id="+cliente.id+"' class='dropdown-item text-white' type='button'>Modifica</a></li>"+
+                    "<li><button class='elimina-cliente dropdown-item' type='button' data-id='"+cliente.id+"'>Elimina</button></li>"+
                     "<li><button class='dropdown-item' type='button'>Stampa</button></li>"+
                     "<li><button class='dropdown-item' type='button' data-bs-toggle='modal' data-bs-target='#richiesteUtente'>Richieste</button></li>"+
                     "<li><button class='dropdown-item' type='button'>Proposte Visite</button></li>"+

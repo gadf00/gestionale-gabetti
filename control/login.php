@@ -33,11 +33,11 @@ if (isset($_POST['login'])) {
     if ($user && password_verify($password, $user['password'])) {
         // Imposta la sessione e reindirizza l'utente alla home page
         $_SESSION['username'] = $username;
-        header('Location: ../clients');
+        header('Location: ../clients.php');
         exit;
     } else {
         $_SESSION["error"] = "Username o Password errati";
-        header("location: ../login");
+        header("location: ../login.php");
         exit;
     }
 }

@@ -86,7 +86,6 @@ $(document).ready(function () {
               location.reload();
             }
           });
-          console.log(response);
         },
         error: function (xhr, status, error) {
           // Gestisci eventuali errori
