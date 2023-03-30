@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-        url:"comuni/comuni.csv",
+        url:"../../../comuni/comuni.csv",
         dataType: "text",
         success: function(data){
             var comuni = Papa.parse(data,{

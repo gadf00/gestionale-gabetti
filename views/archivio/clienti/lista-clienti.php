@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../../css/main.min.css">
+    <link rel="stylesheet" href="../../../css/style.css">
 
 </head>
 <body class="bg-altwhite">
@@ -83,11 +83,10 @@
           <p class=" fs-2 fw-bold lh-1 text-textprimary">Clienti</p>
         </div>
         <div class="mb-4">
-          <button type="button" class="btn btn-altblue text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <a href="nuovo-cliente.php" class="btn btn-altblue text-white">
             Nuovo Cliente
-          </button>
+          </a>
         </div>
-
 
         <div class="card mb-4 ">
           <div class="card-body">
@@ -96,25 +95,25 @@
               <div class="row row-cols-lg-6 row-cols-md-3 row-cols-2 g-2">
                 <div class="col">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="Ricerca" id="ricerca-text">
+                    <input type="text" class="form-control" placeholder="Ricerca" id="ricerca-text">
                     <label for="inputPassword">Ricerca</label>
                   </div>
                 </div>
                 <div class="col m-auto">
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" id="ricerca-storico">
+                    <input class="form-check-input" type="checkbox" role="switch" id="ricerca-storico">
                     <label class="form-check-label" for="flexSwitchCheckDefault">Includi Storico</label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked id="ricerca-no">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" checked id="ricerca-no">
                     <label class="form-check-label" for="flexRadioDefault1">
                       No
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" id="ricerca-si">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="ricerca-si">
                     <label class="form-check-label" for="flexRadioDefault2">
                       Sì
                     </label>
@@ -122,13 +121,13 @@
                 </div>
                 <div class="col">
                   <div class="form-floating">
-                    <input type="date" class="form-control" id="inputPassword" placeholder="Dalla data" id="ricerca-dalladata">
+                    <input type="date" class="form-control" placeholder="Dalla data" id="ricerca-dalladata">
                     <label for="inputPassword">Dalla Data</label>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-floating">
-                    <input type="date" class="form-control" id="inputPassword" placeholder="Alla data" id="ricerca-alladata">
+                    <input type="date" class="form-control" placeholder="Alla data" id="ricerca-alladata">
                     <label for="inputPassword">Alla Data</label>
                   </div>
                 </div>
@@ -153,36 +152,6 @@
                   </tr>
                 </thead>
                 <tbody class="table-group-divider ">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Gaetano De Filippo</td>
-                    <td>example@gmail.com</td>
-                    <td>3312294330</td>
-                    <td></td>
-                    <td>2023-03-01</td>
-                    <td>300</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-altblue dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Operazioni
-                        </button>
-                        <ul class="dropdown-menu bg-altblue">
-                          <li><button class="dropdown-item text-white" type="button">Modifica</button></li>
-                          <li><button class="dropdown-item" type="button">Elimina</button></li>
-                          <li><button class="dropdown-item" type="button">Stampa</button></li>
-                          <li><button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#richiesteUtente">Richieste</button></li>
-                          <li><button class="dropdown-item" type="button">Proposte Visite</button></li>
-                          <li><button class="dropdown-item" type="button">Invia E-mail</button></li>
-                          <li><button class="dropdown-item" type="button">Stampa Scheda</button></li>
-                          <li><button class="dropdown-item" type="button">Documenti</button></li>
-                          <li><button class="dropdown-item" type="button">Ricerca Immobili</button></li>
-                          <li><button class="dropdown-item" type="button">Altri Dati</button></li>
-                          <li><button class="dropdown-item" type="button">Contatti</button></li>
-                          <li><button class="dropdown-item" type="button">Siti Web</button></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -551,12 +520,10 @@
         </div>
       </div>
     </body>
-    <script src="papaparse/papaparse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="scripts/read-comuni.js"></script>
-    <script src="scripts/validazione-cliente.js"></script>
-    <script src="scripts/nuovo-cliente.js"></script>
-    <script src="scripts/lista-clienti.js"></script>
+    <script src="../../../scripts/validazione-cliente.js"></script>
+    <script src="../../../scripts/nuovo-cliente.js"></script>
+    <script src="../../../scripts/lista-clienti.js"></script>
 </html>

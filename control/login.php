@@ -33,7 +33,7 @@ if (isset($_POST['login'])) {
     if ($user && password_verify($password, $user['password'])) {
         // Imposta la sessione e reindirizza l'utente alla home page
         $_SESSION['username'] = $username;
-        header('Location: ../clients.php');
+        header('Location: ../views/archivio/clienti/lista-clienti.php');
         exit;
     } else {
         $_SESSION["error"] = "Username o Password errati";

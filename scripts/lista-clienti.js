@@ -3,7 +3,7 @@ $(document).ready(function(){
    const table = document.querySelector('#clienti-table tbody');
 
     $.ajax({
-        url: "control/cliente/lista-clienti.php",
+        url: "../../../control/cliente/lista-clienti.php",
         dataType: 'json',
         async: false,
         success: function(response) { 

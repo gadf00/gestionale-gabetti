@@ -50,7 +50,7 @@ $(document).ready(function () {
 
       // Invia una richiesta AJAX al tuo script PHP
       $.ajax({
-        url: "control/cliente/nuovo-cliente.php", // il tuo script PHP che gestisce l'insert
+        url: "../../../control/cliente/nuovo-cliente.php", // il tuo script PHP che gestisce l'insert
         type: "POST",
         data: {
           nominativo: nominativo,
