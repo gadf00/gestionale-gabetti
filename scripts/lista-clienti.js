@@ -120,7 +120,7 @@ function gestisciRicerca(table,clienti,valoreRicerca, valoreStorico, valoreNo, v
 function aggiungiRigaCliente(table,cliente){
     const row = document.createElement('tr');
     row.innerHTML = 
-        "<td>" + cliente.id + "</td>" +
+        "<td>" + cliente.id_cliente + "</td>" +
         "<td>" + cliente.nominativo + "</td>" +
         "<td>" + cliente.email + "</td>" +
         "<td>" + cliente.indirizzo + "</td>" +
@@ -133,7 +133,7 @@ function aggiungiRigaCliente(table,cliente){
                     "Operazioni"+
                 "</button>"+
                 "<ul class='dropdown-menu bg-altblue'>"+
-                    "<li><a href='./control/cliente/redirect-modifica-cliente.php?id="+cliente.id+"' class='dropdown-item text-white' type='button'>Modifica</a></li>"+
+                    "<li><a href='./control/cliente/redirect-modifica-cliente.php?id="+cliente.id_cliente+"' class='dropdown-item text-white' type='button'>Modifica</a></li>"+
                     "<li><button class='elimina-cliente dropdown-item' type='button' data-id='"+cliente.id+"'>Elimina</button></li>"+
                     "<li><button class='dropdown-item' type='button'>Stampa</button></li>"+
                     "<li><button class='dropdown-item' type='button' data-bs-toggle='modal' data-bs-target='#richiesteUtente'>Richieste</button></li>"+

@@ -9,7 +9,6 @@ $(document).ready(function () {
     if (!form.checkValidity()) {
       event.stopPropagation();
     } else {
-      console.log("sium");
       // Prendi i valori dei campi del form
       var nominativo = $("#nominativo").val();
       var data_registrazione = $("#data_registrazione").val();

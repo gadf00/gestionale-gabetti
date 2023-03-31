@@ -9,7 +9,7 @@
         $cliente = $stmt->fetch();
         if($cliente){
             try{
-                $stmt = $db->prepare("DELETE FROM cliente WHERE id = ?");
+                $stmt = $db->prepare("DELETE FROM cliente WHERE id_cliente = ?");
                 $stmt->execute([$id]);
                 echo "eliminato";
             }

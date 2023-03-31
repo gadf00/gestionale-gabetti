@@ -320,5 +320,5 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../../papaparse/papaparse.min.js"></script>
     <script src="../../../scripts/read-comuni.js"></script>
-    <script src="../../../scripts/nuovo-cliente.js"></script>
+    <script src="../../../scripts/archivio/clienti/nuovo-cliente.js"></script>
 </html>
