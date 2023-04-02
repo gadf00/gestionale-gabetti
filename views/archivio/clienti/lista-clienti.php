@@ -523,7 +523,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../../../scripts/validazione-cliente.js"></script>
-    <script src="../../../scripts/nuovo-cliente.js"></script>
-    <script src="../../../scripts/lista-clienti.js"></script>
+    <script src="../../../scripts/archivio/clienti/nuovo-cliente.js"></script>
+    <script src="../../../scripts/archivio/clienti/lista-clienti.js"></script>
 </html>

@@ -38,7 +38,7 @@ $(document).ready(function () {
 function displayNames(value){
     let localita = document.getElementById("localita");
     $.ajax({
-        url:"comuni/comuni.csv",
+        url:"../../../comuni/comuni.csv",
         dataType: "text",
         success: function(data){
             var comuni = Papa.parse(data,{
@@ -49,7 +49,7 @@ function displayNames(value){
                 if(value === i.pro_com_t){
                     localita.value = i.comune;
                     $.ajax({
-                        url:"comuni/cap.csv",
+                        url:"../../../comuni/cap.csv",
                         dataType: "text",
                         success: function(data){
                             var caps = Papa.parse(data,{
@@ -85,7 +85,7 @@ function removeElements(){
 
 $(document).ready(function () {
     $.ajax({
-        url:"comuni/comuni.csv",
+        url:"../../../comuni/comuni.csv",
         dataType: "text",
         success: function(data){
             var comuni = Papa.parse(data,{

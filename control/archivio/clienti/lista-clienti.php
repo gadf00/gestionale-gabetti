@@ -1,5 +1,5 @@
 <?php
-    require_once('../../config/dbconfig.php');
+    require_once('../../../config/dbconfig.php');
 
     // Query per recuperare tutti i clienti
 

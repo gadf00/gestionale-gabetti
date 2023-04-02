@@ -49,7 +49,7 @@ $(document).ready(function () {
 
       // Invia una richiesta AJAX al tuo script PHP
       $.ajax({
-        url: "../../../control/cliente/nuovo-cliente.php", // il tuo script PHP che gestisce l'insert
+        url: "../../../control/archivio/clienti/nuovo-cliente.php", // il tuo script PHP che gestisce l'insert
         type: "POST",
         data: {
           nominativo: nominativo,
@@ -82,7 +82,7 @@ $(document).ready(function () {
           }
           ).then((result) => {
             if (result.isConfirmed) {
-              location.reload();
+              window.location.href = window.location.origin + "/gestionale-gabetti/views/archivio/clienti/lista-clienti.php";
             }
           });
         },

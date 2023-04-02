@@ -1,5 +1,5 @@
 <?php
-        require_once('../../config/dbconfig.php');
+        require_once('../../../config/dbconfig.php');
 
         // Ottenimento dei dati dal form
         $nominativo = $_POST['nominativo'];

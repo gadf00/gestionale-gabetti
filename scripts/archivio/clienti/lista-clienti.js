@@ -3,7 +3,7 @@ $(document).ready(function(){
    const table = document.querySelector('#clienti-table tbody');
 
     $.ajax({
-        url: "../../../control/cliente/lista-clienti.php",
+        url: "../../../control/archivio/clienti/lista-clienti.php",
         dataType: 'json',
         async: false,
         success: function(response) { 
@@ -36,7 +36,7 @@ $(document).ready(function(){
 
     $('.elimina-cliente').click(function(){
         var idCliente = $(this).attr('data-id');
-        $.post('control/cliente/elimina-cliente.php',{id:idCliente}, function(response){
+        $.post('../../../control/archivio/clienti/elimina-cliente.php',{id:idCliente}, function(response){
             if(response == "eliminato"){
                 Swal.fire({
                     title: "Cliente eliminato!",

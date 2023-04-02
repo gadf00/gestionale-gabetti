@@ -22,7 +22,7 @@ $(document).ready(function(){
 
      $('.elimina-richiesta').click(function(){
          var idRichiesta = $(this).attr('data-id');
-         $.post('control/cliente/elimina-richiesta.php',{id:idRichiesta}, function(response){
+         $.post('control/archivio/clienti/elimina-richiesta.php',{id:idRichiesta}, function(response){
              if(response == "eliminata"){
                  Swal.fire({
                      title: "Richiesta Eliminata!",

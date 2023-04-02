@@ -1,8 +1,4 @@
 $(document).ready(function () {
-  $("#nuovaRichiesta").on("hidden.bs.modal", function () {
-    $(this).find("form").trigger("reset");
-    $(this).find("form").removeClass("was-validated");
-  });
   var form = $("#nuova-richiesta")[0];
   $("#nuova-richiesta").submit(function (event) {
     event.preventDefault();

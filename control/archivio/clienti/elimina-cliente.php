@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include '../../config/dbconfig.php';
+    include '../../../config/dbconfig.php';
 
     if(isset($_POST['id'])){
         $id = $_POST['id'];
@@ -12,9 +12,10 @@
                 $stmt = $db->prepare("DELETE FROM cliente WHERE id_cliente = ?");
                 $stmt->execute([$id]);
                 echo "eliminato";
+                exit;
             }
             catch(PDOException $e){
-                echo "errore";
+                echo $e;
             }
         }
         else{

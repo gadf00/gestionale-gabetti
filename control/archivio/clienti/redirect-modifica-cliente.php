@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include '../../config/dbconfig.php';
+    include '../../../config/dbconfig.php';
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
