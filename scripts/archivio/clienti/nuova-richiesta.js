@@ -4,6 +4,26 @@ $(document).ready(function () {
   const nuovaRichiestaModal = document.getElementById('nuovaRichiesta');
 
   nuovaRichiestaModal.addEventListener('shown.bs.modal', () => {
+    var tipi_immobili;
+    const select_tipo = $("#select_tipo");
+    $.ajax({
+      url: "../../../control/tabelle/tipi_immobili/lista-tipi-immobili.php",
+      dataType: 'json',
+      async: false,
+      success: function(response) { 
+        tipi_immobili = response;
+          tipi_immobili.forEach(tipo_immobile=>{
+            aggiungiRigaTipo(select_tipo,tipo_immobile);
+          }
+      );
+      },
+      error: function (xhr, status, error) {
+          // Gestisci eventuali errori
+          console.log(xhr.responseText);
+        },
+  });
+
+
     var caratteristiche;
     const caratteristiche_div = $("#caratteristiche");
     caratteristiche_div.empty();
@@ -151,8 +171,14 @@ $(document).ready(function () {
 function aggiungiRigaCaratteristica(caratteristiche_div,caratteristica){
    const radioHtml = 
     "<div class='form-check'>"+
-      "<input class='form-check-input' type='checkbox' id="+caratteristica.id+" value="+caratteristica.id+">" +
-      "<label class='form-check-label' for="+caratteristica.id+">"+caratteristica.caratteristica+"</label>" +
+      "<input class='form-check-input' type='checkbox' id='"+caratteristica.id_caratteristica+"' value='"+caratteristica.id+"'>" +
+      "<label class='form-check-label' for='"+caratteristica.id_caratteristica+"'>"+caratteristica.caratteristica+"</label>" +
     "</div>"
   caratteristiche_div.append(radioHtml);
+}
+
+function aggiungiRigaTipo(select_tipo,tipo_immobile){
+  const optionHtml = 
+    "<option value='"+tipo_immobile.id_tipo_immobile+"'>"+tipo_immobile.tipo_immobile+"</option>";
+ select_tipo.append(optionHtml);
 }

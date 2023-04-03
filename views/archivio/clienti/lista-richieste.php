@@ -78,9 +78,9 @@ $id = $_GET['id'];
                     </div>
                     <div class="col-12">
                       <div class="form-floating mb-2">
-                        <input type="text" class="form-control" id="tipo" placeholder="Tipo" pattern="^[\p{L} ]+$"
-                          required>
-                        <label for="inputPassword">Tipo</label>
+                        <select id="select_tipo" class="form-select" aria-label="Tipo Immobile">
+                          <option selected>Seleziona Tipo Immobile</option>
+                        </select>
                         <div class="valid-feedback">
                           Inserimento corretto!
                         </div>
