@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-altwhite">
-    <div class="container-fluid">
+    <?php include('../../components/navbar.php'); ?>
         <div class="mt-2 mb-n16 rounded-2 bg-altblue px-1">
             <nav class="navbar navbar-expand-lg mb-5">
                 <div class="container-fluid">

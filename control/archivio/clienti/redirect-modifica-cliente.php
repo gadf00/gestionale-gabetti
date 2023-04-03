@@ -7,7 +7,7 @@
         $stmt = $db->prepare("SELECT * FROM cliente WHERE id_cliente = ?");
         $stmt->execute([$id]);
         $cliente = $stmt->fetch();
-        header("Location: ../../modifica-cliente.php?cliente=".urlencode(json_encode($cliente)));
+        header("Location: ../../../views/archivio/clienti/modifica-cliente.php?cliente=".urlencode(json_encode($cliente)));
 
     }
 ?>

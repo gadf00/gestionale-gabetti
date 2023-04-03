@@ -1,14 +1,19 @@
 $(document).ready(function(){
-    var clienti;
+    var richieste;
     const table = document.querySelector('#richieste-table tbody');
- 
+    var id_cliente = $('#id_cliente').val();
+    console.log(id_cliente);
      $.ajax({
-         url: "../../../control/cliente/lista-richieste.php",
+         url: "../../../control/archivio/clienti/lista-richieste.php",
+         data:{
+            id_cliente: id_cliente
+         },
          dataType: 'json',
          async: false,
          success: function(response) { 
              richieste = response;
-             response.forEach(richiesta =>{
+             console.log(richieste);
+             richieste.forEach(richiesta =>{
                  aggiungiRigaRichiesta(table,richiesta);
              }
          );

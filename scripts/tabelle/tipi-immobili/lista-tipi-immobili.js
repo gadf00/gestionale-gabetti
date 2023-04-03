@@ -10,7 +10,7 @@ $(document).ready(function(){
          success: function(response) { 
              tipi_immobili = response;
              response.forEach(tipo_immobile =>{
-                 aggiungiRigaCliente(table,tipo_immobile);
+                 aggiungiRigaRichiesta(table,tipo_immobile);
              }
          );
          },
@@ -22,9 +22,8 @@ $(document).ready(function(){
  
  
      $('.elimina-tipo-immobile').click(function(){
-        console.log("sium");
          var id = $(this).attr('data-id');
-         $.post('control/tabelle/tipi-immobili/elimina-tipo-immobile.php',{id:id}, function(response){
+         $.post('../../../control/tabelle/tipi-immobili/elimina-tipo-immobile.php',{id:id}, function(response){
              if(response == "eliminato"){
                  Swal.fire({
                      title: "Tipo Immobile eliminato!",
@@ -89,7 +88,7 @@ $(document).ready(function(){
  
  });
  
- function aggiungiRigaCliente(table,tipo_immobile){
+ function aggiungiRigaRichiesta(table,tipo_immobile){
      const row = document.createElement('tr');
      row.innerHTML = 
          "<td>" + tipo_immobile.id_tipo_immobile + "</td>" +

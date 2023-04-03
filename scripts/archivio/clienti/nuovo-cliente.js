@@ -73,7 +73,6 @@ $(document).ready(function () {
         },
         success: function (response) {
           // Gestisci la risposta del server
-          $("#staticBackdrop").modal("hide");
           Swal.fire({
             title: "Cliente aggiunto!",
             text: "Il cliente è stato aggiunto correttamente!",

@@ -133,10 +133,10 @@ function aggiungiRigaCliente(table,cliente){
                     "Operazioni"+
                 "</button>"+
                 "<ul class='dropdown-menu bg-altblue'>"+
-                    "<li><a href='./control/cliente/redirect-modifica-cliente.php?id="+cliente.id_cliente+"' class='dropdown-item text-white' type='button'>Modifica</a></li>"+
+                    "<li><a href='../../../control/archivio/clienti/redirect-modifica-cliente.php?id="+cliente.id_cliente+"' class='dropdown-item text-white' type='button'>Modifica</a></li>"+
                     "<li><button class='elimina-cliente dropdown-item' type='button' data-id='"+cliente.id+"'>Elimina</button></li>"+
                     "<li><button class='dropdown-item' type='button'>Stampa</button></li>"+
-                    "<li><button class='dropdown-item' type='button' data-bs-toggle='modal' data-bs-target='#richiesteUtente'>Richieste</button></li>"+
+                    "<li><a href='../../../views/archivio/clienti/lista-richieste.php?id="+cliente.id_cliente+"' class='dropdown-item' type='button'>Richieste</button></li>"+
                     "<li><button class='dropdown-item' type='button'>Proposte Visite</button></li>"+
                     "<li><button class='dropdown-item' type='button'>Invia E-mail</button></li>"+
                     "<li><button class='dropdown-item' type='button'>Stampa Scheda</button></li>"+

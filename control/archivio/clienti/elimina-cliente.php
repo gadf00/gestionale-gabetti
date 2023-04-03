@@ -4,7 +4,7 @@
 
     if(isset($_POST['id'])){
         $id = $_POST['id'];
-        $stmt = $db->prepare("SELECT * FROM cliente WHERE id = ?");
+        $stmt = $db->prepare("SELECT * FROM cliente WHERE id_cliente = ?");
         $stmt->execute([$id]);
         $cliente = $stmt->fetch();
         if($cliente){
