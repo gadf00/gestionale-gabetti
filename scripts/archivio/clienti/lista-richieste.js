@@ -2,7 +2,6 @@ $(document).ready(function(){
     var richieste;
     const table = document.querySelector('#richieste-table tbody');
     var id_cliente = $('#id_cliente').val();
-    console.log(id_cliente);
      $.ajax({
          url: "../../../control/archivio/clienti/lista-richieste.php",
          data:{
@@ -12,7 +11,6 @@ $(document).ready(function(){
          async: false,
          success: function(response) { 
              richieste = response;
-             console.log(richieste);
              richieste.forEach(richiesta =>{
                  aggiungiRigaRichiesta(table,richiesta);
              }

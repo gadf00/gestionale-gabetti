@@ -398,37 +398,6 @@ $id = $_GET['id'];
                   <div class="p-3 border rounded-2 border-altdark">
                     <p class="fs-6 text-altblue">Caratteristiche</p>
                     <div id="caratteristiche"></div>
-
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        POSTO AUTO
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                      <label class="form-check-label" for="flexCheckChecked">
-                        GARAGE
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                      <label class="form-check-label" for="flexCheckChecked">
-                        TERRAZZO
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                      <label class="form-check-label" for="flexCheckChecked">
-                        GIARDINO
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                      <label class="form-check-label" for="flexCheckChecked">
-                        RISCALDAMENTO
-                      </label>
-                    </div>
                   </div>
                 </div>
                 <div class="d-flex justify-content-end">

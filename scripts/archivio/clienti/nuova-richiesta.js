@@ -1,25 +1,31 @@
 $(document).ready(function () {
   var form = $("#nuova-richiesta")[0];
 
+  const nuovaRichiestaModal = document.getElementById('nuovaRichiesta');
 
-  var caratteristiche;
-  const caratteristiche_div = $("#caratteristiche");
-  $.ajax({
-      url: "../../../control/tabelle/tipi-immobili/lista-caratteristiche.php",
-      dataType: 'json',
-      async: false,
-      success: function(response) { 
-          caratteristiche = response;
-          caratteristiche.forEach(caratteristica =>{
-            aggiungiRigaCaratteristica(caratteristiche_div,caratteristica);
-          }
-      );
-      },
-      error: function (xhr, status, error) {
-          // Gestisci eventuali errori
-          console.log(xhr.responseText);
+  nuovaRichiestaModal.addEventListener('shown.bs.modal', () => {
+    var caratteristiche;
+    const caratteristiche_div = $("#caratteristiche");
+    caratteristiche_div.empty();
+    $.ajax({
+        url: "../../../control/tabelle/caratteristiche/lista-caratteristiche.php",
+        dataType: 'json',
+        async: false,
+        success: function(response) { 
+            caratteristiche = response;
+            caratteristiche.forEach(caratteristica =>{
+              aggiungiRigaCaratteristica(caratteristiche_div,caratteristica);
+            }
+        );
         },
+        error: function (xhr, status, error) {
+            // Gestisci eventuali errori
+            console.log(xhr.responseText);
+          },
+    });
   });
+
+
 
   $("#nuova-richiesta").submit(function (event) {
     event.preventDefault();
@@ -145,7 +151,7 @@ $(document).ready(function () {
 function aggiungiRigaCaratteristica(caratteristiche_div,caratteristica){
    const radioHtml = 
     "<div class='form-check'>"+
-      "input class='form-check-input' type='checkbox' id="+caratteristica.id+" value="+caratteristica.id+">" +
+      "<input class='form-check-input' type='checkbox' id="+caratteristica.id+" value="+caratteristica.id+">" +
       "<label class='form-check-label' for="+caratteristica.id+">"+caratteristica.caratteristica+"</label>" +
     "</div>"
   caratteristiche_div.append(radioHtml);
