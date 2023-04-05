@@ -21,12 +21,12 @@
 
         <div class="card">
             <div class="card-body">
-                <form class="row g-4 form-floating needs-validation" novalidate id="nuova-caratteristica">
+                <form class="row g-4 form-floating needs-validation" novalidate id="calcolo-codice-fiscale">
                     <div class="col-12">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" id="caratteristica" placeholder="Caratteristica" pattern="^[\p{L} ]+$" required>
+                                    <input type="text" class="form-control" id="nome" placeholder="Caratteristica" pattern="^[\p{L} ]+$" required>
                                     <label for="caratteristica">Nome</label>
                                     <div class="valid-feedback">
                                         Inserimento corretto!
@@ -37,7 +37,7 @@
                                     </div>
                                 </div>
                                 <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" id="caratteristica" placeholder="Caratteristica" pattern="^[\p{L} ]+$" required>
+                                    <input type="text" class="form-control" id="cognome" placeholder="Caratteristica" pattern="^[\p{L} ]+$" required>
                                     <label for="caratteristica">Cognome</label>
                                     <div class="valid-feedback">
                                         Inserimento corretto!
@@ -48,8 +48,8 @@
                                     </div>
                                 </div>
                                 <div class="form-floating mb-2">
-                                    <input type="date" class="form-control" id="caratteristica" placeholder="Caratteristica" pattern="^[\p{L} ]+$" required>
-                                    <label for="caratteristica">Cognome</label>
+                                    <input type="date" class="form-control" id="data" placeholder="Caratteristica" pattern="^[\p{L} ]+$" required>
+                                    <label for="caratteristica">Data di Nascita</label>
                                     <div class="valid-feedback">
                                         Inserimento corretto!
                                     </div>
@@ -58,11 +58,36 @@
                                         numeri.
                                     </div>
                                 </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sesso" id="maschio" value="M" checked>
+                                    <label class="form-check-label" for="maschio">Maschio</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="sesso" id="femmina" value="F">
+                                    <label class="form-check-label" for="femmina">Femmina</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="comune" name="comune" placeholder="Comune di Nascita" required>
+                                    <label for="comune">Comune di Nascita</label>
+                                    <div class="valid-feedback">
+                                        Inserimento corretto!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Comune di Nascita non può essere vuoto.
+                                    </div>
+                                    <div class="result-comune">
+                                        <ul class="list"></ul>
+                                    </div>
+                                    <input type="hidden" id="codice-catastale">
+                                </div>
+                                <div class="form-floating mb-2">
+                                    <input type="text" class="form-control" id="codice-fiscale" placeholder="Codice Fiscale" disabled>
+                                    <label for="caratteristica">Codice Fiscale</label>
+                                </div>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-altblue text-white">Salva
-                                Caratteristica</button>
+                            <button type="submit" class="btn btn-altblue text-white">Calcolo Codice Fiscale</button>
                         </div>
                     </div>
                 </form>
@@ -75,8 +100,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="../../../scripts/tabelle/caratteristiche/nuova-caratteristica.js"></script>
-<script src="../../../scripts/tabelle/caratteristiche/lista-caratteristiche.js"></script>
-<script src="../../../scripts/tabelle/caratteristiche/modifica-caratteristica.js"></script>
-
+<script src="../../../papaparse/papaparse.min.js"></script>
+<script src="../../../scripts/servizi/codice-fiscale/comune-codice-fiscale.js"></script>
+<script src="../../../scripts/servizi/codice-fiscale/calcolo-codice-fiscale.js"></script>
 </html>

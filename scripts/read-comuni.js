@@ -25,7 +25,6 @@ $(document).ready(function () {
                 }
             })
             localita.addEventListener("change", (e) =>{
-                console.log("sium");
                 if(localita.value == ""){
                     document.getElementById('provincia').value = "";
                     document.getElementById('cap').value = "";
