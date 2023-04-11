@@ -79,7 +79,7 @@ $id = $_GET['id'];
                     <div class="col-12">
                       <div class="form-floating mb-2">
                         <select id="select_tipo" class="form-select" aria-label="Tipo Immobile">
-                          <option selected>Seleziona Tipo Immobile</option>
+                          <option disabled selected>Seleziona Tipo Immobile</option>
                         </select>
                         <div class="valid-feedback">
                           Inserimento corretto!
@@ -418,6 +418,6 @@ $id = $_GET['id'];
 <script src="../../../papaparse/papaparse.min.js"></script>
 <script src="../../../scripts/archivio/clienti/nuova-richiesta.js"></script>
 <script src="../../../scripts/archivio/clienti/lista-richieste.js"></script>
-<script src="../../../scripts/read-comuni.js"></script>
+<script src="../../../scripts/archivio/clienti/comune-richiesta.js"></script>
 
 </html>

@@ -1,17 +1,17 @@
 <?php
     require_once('../../../config/dbconfig.php');
 
-    // Query per recuperare tutti i clienti
 
-    // Query per recuperare la lista dei clienti
-    if(isset($_GET['id_cliente'])){
-        $id = $_GET['id_cliente'];
-        $stmt = $db->prepare("SELECT * FROM richiesta WHERE id_cliente = ?");
-        $stmt->execute([$id]);
-        $richieste = $stmt->fetch();
+    $id_cliente = $_GET['id_cliente'];
+    try{
+        $stmt = $db->prepare("SELECT richiesta.*, tipo_immobile.tipo_immobile FROM richiesta JOIN tipo_immobile WHERE richiesta.id_tipo_immobile = ? AND richiesta.id_tipo_immobile = tipo_immobile.id_tipo_immobile");
+        $stmt->execute([$id_cliente]);
+        $richieste = $stmt->fetchAll(PDO::FETCH_ASSOC);
         header("Content-Type: application/json");
-        $db = null;
         echo json_encode($richieste);
-
     }
+    catch(PDOException $e){
+        echo "Error: " .$e->getMessage();
+    }
+    $db = null;
 ?>
