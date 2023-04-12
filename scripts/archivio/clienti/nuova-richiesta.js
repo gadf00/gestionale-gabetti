@@ -1,51 +1,46 @@
 $(document).ready(function () {
   var form = $("#nuova-richiesta")[0];
 
-  const nuovaRichiestaModal = document.getElementById('nuovaRichiesta');
+  const nuovaRichiestaModal = document.getElementById("nuovaRichiesta");
 
-  nuovaRichiestaModal.addEventListener('shown.bs.modal', () => {
+  nuovaRichiestaModal.addEventListener("shown.bs.modal", () => {
     var tipi_immobili;
     const select_tipo = $("#select_tipo");
+    select_tipo.empty();
     $.ajax({
       url: "../../../control/tabelle/tipi-immobili/lista-tipi-immobili.php",
-      dataType: 'json',
+      dataType: "json",
       async: false,
-      success: function(response) { 
+    })
+      .done(function (response) {
         tipi_immobili = response;
-          tipi_immobili.forEach(tipo_immobile=>{
-            aggiungiRigaTipo(select_tipo,tipo_immobile);
-          }
-      );
-      },
-      error: function (xhr, status, error) {
-          // Gestisci eventuali errori
-          console.log(xhr.responseText);
-        },
-  });
-
+        tipi_immobili.forEach((tipo_immobile) => {
+          aggiungiRigaTipo(select_tipo, tipo_immobile);
+        });
+      })
+      .fail(function (xhr, status, error) {
+        console.log(xhr.responseText);
+      });
 
     var caratteristiche;
     const caratteristiche_div = $("#caratteristiche");
     caratteristiche_div.empty();
     $.ajax({
-        url: "../../../control/tabelle/caratteristiche/lista-caratteristiche.php",
-        dataType: 'json',
-        async: false,
-        success: function(response) { 
-            caratteristiche = response;
-            caratteristiche.forEach(caratteristica =>{
-              aggiungiRigaCaratteristica(caratteristiche_div,caratteristica);
-            }
-        );
-        },
-        error: function (xhr, status, error) {
-            // Gestisci eventuali errori
-            console.log(xhr.responseText);
-          },
+      url: "../../../control/tabelle/caratteristiche/lista-caratteristiche.php",
+      dataType: "json",
+      async: false,
+      success: function (response) {
+        caratteristiche = response;
+        caratteristiche.forEach((caratteristica) => {
+          aggiungiRigaCaratteristica(caratteristiche_div, caratteristica);
+        });
+      },
+      error: function (xhr, status, error) {
+        // Gestisci eventuali errori
+        console.log(xhr.responseText);
+      },
     });
   });
-
-
 
   $("#nuova-richiesta").submit(function (event) {
     event.preventDefault();
@@ -74,52 +69,55 @@ $(document).ready(function () {
       var quartiere_3 = $("#quartiere_3").val();
       var quartiere_4 = $("#quartiere_4").val();
       var quartiere_5 = $("#quartiere_5").val();
-      
+
       var costo_min = 0.0;
-      if($("#costo_min").val() != ''){
+      if ($("#costo_min").val() != "") {
         costo_min = $("#costo_min").val();
       }
       var costo_max = 0.0;
-      if($("#costo_max").val() != ''){
+      if ($("#costo_max").val() != "") {
         costo_min = $("#costo_max").val();
       }
       var superficie_min = 0.0;
-      if($("#superficie_min").val() != ''){
+      if ($("#superficie_min").val() != "") {
         costo_min = $("#superficie_min").val();
       }
 
       var piano_min = 0;
-      if($("#piano_min").val() != ''){
+      if ($("#piano_min").val() != "") {
         costo_min = $("#piano_min").val();
       }
       var piano_max = 0;
-      if($("#piano_max").val() != ''){
+      if ($("#piano_max").val() != "") {
         costo_min = $("#piano_max").val();
       }
       var vano_min = 0;
-      if($("#vano_min").val() != ''){
+      if ($("#vano_min").val() != "") {
         costo_min = $("#vano_min").val();
       }
       var bagno_min = 0;
-      if($("#bagno_min").val() != ''){
+      if ($("#bagno_min").val() != "") {
         costo_min = $("#bagno_min").val();
       }
       var camera_letto_min = 0;
-      if($("#camera_letto_min").val() != ''){
+      if ($("#camera_letto_min").val() != "") {
         costo_min = $("#camera_letto_min").val();
       }
       var anno_costruzione_min = 0;
-      if($("#anno_costruzione_min").val() != ''){
+      if ($("#anno_costruzione_min").val() != "") {
         costo_min = $("#anno_costruzione_min").val();
       }
       var note = $("#note").val();
       var id_cliente = $("#id_cliente").val();
 
-      var valoriCaratteristiche = $('input[type="checkbox"][name^="caratteristica-"]:checked');
-      var caratteristiche = valoriCaratteristiche.map(function() {
-        return $(this).val();
-      }).get();
-      
+      var valoriCaratteristiche = $(
+        'input[type="checkbox"][name^="caratteristica-"]:checked'
+      );
+      var caratteristiche = valoriCaratteristiche
+        .map(function () {
+          return $(this).val();
+        })
+        .get();
 
       $.ajax({
         url: "../../../control/archivio/clienti/nuova-richiesta.php",
@@ -149,7 +147,7 @@ $(document).ready(function () {
           anno_costruzione_min: anno_costruzione_min,
           note: note,
           id_cliente: id_cliente,
-          caratteristiche: caratteristiche
+          caratteristiche: caratteristiche,
         },
         success: function (response) {
           $("#nuova-richiesta").modal("hide");
@@ -165,27 +163,40 @@ $(document).ready(function () {
             }
           });
         },
-        error: function(xhr,status, error){
-            console.log(xhr.responseText);
-        }
+        error: function (xhr, status, error) {
+          console.log(xhr.responseText);
+        },
       });
     }
     $(this).addClass("was-validated");
   });
 });
 
-
-function aggiungiRigaCaratteristica(caratteristiche_div,caratteristica){
-   const radioHtml = 
-    "<div class='form-check'>"+
-      "<input class='form-check-input' type='checkbox' name='caratteristica-"+caratteristica.id_caratteristica+"' id='"+caratteristica.id_caratteristica+"' value='"+caratteristica.id_caratteristica+"'>" +
-      "<label class='form-check-label' for='"+caratteristica.id_caratteristica+"'>"+caratteristica.caratteristica+"</label>" +
-    "</div>"
+function aggiungiRigaCaratteristica(caratteristiche_div, caratteristica) {
+  const radioHtml =
+    "<div class='form-check'>" +
+    "<input class='form-check-input' type='checkbox' name='caratteristica-" +
+    caratteristica.id_caratteristica +
+    "' id='" +
+    caratteristica.id_caratteristica +
+    "' value='" +
+    caratteristica.id_caratteristica +
+    "'>" +
+    "<label class='form-check-label' for='" +
+    caratteristica.id_caratteristica +
+    "'>" +
+    caratteristica.caratteristica +
+    "</label>" +
+    "</div>";
   caratteristiche_div.append(radioHtml);
 }
 
-function aggiungiRigaTipo(select_tipo,tipo_immobile){
-  const optionHtml = 
-    "<option value='"+tipo_immobile.id_tipo_immobile+"'>"+tipo_immobile.tipo_immobile+"</option>";
- select_tipo.append(optionHtml);
+function aggiungiRigaTipo(select_tipo, tipo_immobile) {
+  const optionHtml =
+    "<option value='" +
+    tipo_immobile.id_tipo_immobile +
+    "'>" +
+    tipo_immobile.tipo_immobile +
+    "</option>";
+  select_tipo.append(optionHtml);
 }

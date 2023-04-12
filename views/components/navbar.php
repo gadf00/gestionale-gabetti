@@ -29,7 +29,7 @@
                   <ul class="dropdown-menu mt-2">
                     <li><a class="dropdown-item" href="../../archivio/clienti/lista-clienti.php">Clienti</a></li>
                     <li><a class="dropdown-item" href="#">Proprietari</a></li>
-                    <li><a class="dropdown-item" href="#">Immobili</a></li>
+                    <li><a class="dropdown-item" href="../../archivio/immobili/lista-immobili.php">Immobili</a></li>
                     <li><a class="dropdown-item" href="#">Censimento</a></li>
                     <li><a class="dropdown-item" href="#">Rubrica</a></li>
                     <li><a class="dropdown-item" href="#">Notizie</a></li>

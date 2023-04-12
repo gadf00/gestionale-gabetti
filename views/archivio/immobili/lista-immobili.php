@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista Immobili</title>
     <link rel="stylesheet" href="../../../css/main.min.css">
     <link rel="stylesheet" href="../../../css/style.css">
 
@@ -15,11 +15,11 @@
 
       <div class="container mt-5">
         <div class="mb-4">
-          <p class=" fs-2 fw-bold lh-1 text-textprimary">Clienti</p>
+          <p class=" fs-2 fw-bold lh-1 text-textprimary">Immobili</p>
         </div>
         <div class="mb-4">
-          <a href="nuovo-cliente.php" class="btn btn-altblue text-white">
-            Nuovo Cliente
+          <a href="nuovo-immobile.php" class="btn btn-altblue text-white">
+            Nuovo Immobile
           </a>
         </div>
 
@@ -27,46 +27,102 @@
           <div class="card-body">
             <h5 class="card-title text-altblue">Ricerca</h5>
             <form class="form-floating">
-              <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2 g-2">
-                <div class="col">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" placeholder="Ricerca" id="ricerca-text">
-                    <label for="inputPassword">Ricerca</label>
-                  </div>
+                <div class="row row-cols-lg-4 row-cols-md-3 row-cols-2 g-2">
+                    <div class="row g-2">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Ricerca" id="ricerca_tipo">
+                                <label for="ricerca_tipo">Tipo</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="ricerca_fine_incarico" value="fine_incarico">
+                                <label class="form-check-label" for="ricerca_fine_incarico">Fine Incarico</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="ricerca-includi_storico" value="includi_storico">
+                                <label class="form-check-label" for="ricerca_includi_storico">Includi Storico</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="ricerca_incarico_terminato" value="incarico_terminato">
+                                <label class="form-check-label" for="ricerca_incarico_terminato">Incarico Terminato</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="ricerca_incarico_verbale" value="incarico_verbale">
+                                <label class="form-check-label" for="ricerca_incarico_verbale">Includi Incarico Verbale</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Località" id="ricerca_localita">
+                                <label for="ricerca_localita">Località</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Codice" id="ricerca_codice">
+                                <label for="ricerca_codice">Codice</label>
+                            </div>
+                        </div> 
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Quartiere" id="ricerca_quartiere">
+                                <label for="ricerca_quartiere">Quartiere</label>
+                            </div>
+                        </div>      
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Proprietario" id="ricerca_proprietario">
+                                <label for="ricerca_proprietario">Proprietario</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Prezzo Min" id="ricerca_prezzo_min">
+                                <label for="ricerca_prezzo_min">Prezzo Min.</label>
+                            </div>
+                        </div> 
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Prezzo Max" id="ricerca_prezzo_max">
+                                <label for="ricerca_prezzo_max">Prezzo Max.</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Prezzo Min" id="ricerca_mq_min">
+                                <label for="ricerca_mq_min">Mq Min.</label>
+                            </div>
+                        </div> 
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" placeholder="Prezzo Max" id="ricerca_mq_max">
+                                <label for="ricerca_mq_max">Mq Max.</label>
+                            </div>
+                        </div>       
+                    </div>
+                    <div class="row g-2 mx-auto">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipo_vendita" id="ricerca_vendita" value="vendita">
+                                <label class="form-check-label" for="exampleRadios1">Vendita</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipo_vendita" id="ricerca_fitto" value="fitto">
+                                <label class="form-check-label" for="ricerca_fitto">Fitto</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipo_vendita" id="ricerca_entrambi" value="entrambi" checked>
+                                <label class="form-check-label" for="ricerca_entrambi">Entrambi</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col m-auto">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="ricerca-storico">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Includi Storico</label>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" checked id="ricerca-no">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      No
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="ricerca-si">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                      Sì
-                    </label>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-floating">
-                    <input type="date" class="form-control" placeholder="Dalla data" id="ricerca-dalladata">
-                    <label for="inputPassword">Dalla Data</label>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-floating">
-                    <input type="date" class="form-control" placeholder="Alla data" id="ricerca-alladata">
-                    <label for="inputPassword">Alla Data</label>
-                  </div>
-                </div>
-              </div>
             </form>
           </div>
         </div>
@@ -77,12 +133,13 @@
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Nominativo</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Telefono 1</th>
-                    <th scope="col">Telefono 2</th>
-                    <th scope="col">Data Reg.</th>
-                    <th scope="col">Costo</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Tipo 1</th>
+                    <th scope="col">Indirizzo 2</th>
+                    <th scope="col">Località</th>
+                    <th scope="col">Fitto</th>
+                    <th scope="col">Vendita</th>                    
                     <th scope="col">Operazioni</th>
                   </tr>
                 </thead>

@@ -64,7 +64,7 @@ function aggiungiRigaRichiesta(table, richiesta) {
         richiesta.id_richiesta +
         "</td>" +
         "<td>" +
-        richiesta.id_tipo_immobile +
+        richiesta.tipo_immobile +
         "</td>" +
         "<td>" +
         richiesta.tipo_richiesta +
