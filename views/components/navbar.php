@@ -45,7 +45,7 @@
                   <ul class="dropdown-menu mt-2">
                     <li><a class="dropdown-item" href="#">Acquisitori</a></li>
                     <li><a class="dropdown-item" href="#">Località</a></li>
-                    <li><a class="dropdown-item" href="#">Quartieri</a></li>
+                    <li><a class="dropdown-item" href="../../tabelle/quartieri/lista-quartieri.php">Quartieri</a></li>
                     <li><a class="dropdown-item" href="../../tabelle/tipi-immobili/lista-tipi-immobili.php">Tipi Immobili</a></li>
                     <li><a class="dropdown-item" href="../../tabelle/caratteristiche/lista-caratteristiche.php">Caratteristiche</a></li>
                     <li><a class="dropdown-item" href="#">Tipi Annunci</a></li>
