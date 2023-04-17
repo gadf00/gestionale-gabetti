@@ -84,7 +84,7 @@
                     </div>
                     <div class="col-12">
                       <div class="form-floating mb-2">
-                        <select id="select_sotto_tipo" class="form-select" aria-label="Tipo Immobile">
+                        <select id="select_sotto_tipo" class="form-select" aria-label="Sotto Tipo Immobile">
                           <option disabled selected>Seleziona Sotto Tipo Immobile</option>
                         </select>
                         <div class="valid-feedback">
@@ -138,7 +138,7 @@
                     </div>
                     <div class="col-12">
                       <div class="form-floating mb-2">
-                        <select id="select_sotto_tipo" class="form-select" aria-label="Tipo Immobile">
+                        <select id="select_quartiere" class="form-select" aria-label="Quartiere Immobile">
                           <option disabled selected>Seleziona Quartiere Immobile</option>
                         </select>
                         <div class="valid-feedback">
@@ -182,6 +182,11 @@
                         </div>
                         <div class="invalid-feedback">
                           Acquisitore non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                        <div class="result-acquisitore">
+                          <ul class="list" id="list-acquisitore">
+
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -357,6 +362,7 @@
                 </div>
               </div>
               <div class="col-6"></div>
+            </form>
           </div>
           <div class="col">
             <button type="submit" class="btn btn-altblue text-white mb-3">
@@ -367,6 +373,328 @@
         </div>
         <div class="tab-pane fade" id="pills-altridati" role="tabpanel" aria-labelledby="altridati-tab" tabindex="0">
           <p class="fs-5 text-altblue">Altri Dati</p>
+          <form class="mb-3 row g-4 form-floating needs-validation" id="generale" novalidate>
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="row g-2">
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input type="date" class="form-control" name="data_registrazione" id="data_registrazione" placeholder="Data Registrazione" pattern="^[\p{L} ]+$" required>
+                        <label for="data_registrazione">Data Registrazione</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Data registrazione non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="descrizione" id="descrizione" placeholder="Descrizione" pattern="^[\p{L} ]+$" required>
+                        <label for="descrizione">Descrizione</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Descrizione non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating mb-2">
+                        <select id="select_tipo" class="form-select" aria-label="Tipo Immobile">
+                          <option disabled selected>Seleziona Tipo Immobile</option>
+                        </select>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Tipo non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating mb-2">
+                        <select id="select_sotto_tipo" class="form-select" aria-label="Sotto Tipo Immobile">
+                          <option disabled selected>Seleziona Sotto Tipo Immobile</option>
+                        </select>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Tipo non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="indirizzo" id="indirizzo" placeholder="Inserisci Indirizzo" required pattern="^[A-Za-zàèéìòù\s]+(\s+(di|del|della|dei|degli|delle)\s+[A-Za-zàèéìòù\s]+)?(?:,\s*\d{1,4})?([A-Za-z]{0,1}\/[A-Za-z]{0,1}\s*)?$">
+                        <label for="indirizzo">Indirizzo</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Indirizzo non può essere vuoto, esempi: "Via Roma 1", "Corso di Porta Ticinese 72/A", "Via Giuseppe Garibaldi, 17".
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" id="localita" name="localita" placeholder="Inserisci Località" required>
+                        <label for="localita">Località</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Località non può essere vuota.
+                        </div>
+                        <div class="result-localita">
+                          <ul class="list">
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-3 col-lg-2">
+                      <div class="form-floating">
+                        <input disabled type="text" class="form-control" id="cap" name="cap" placeholder="Inserisci CAP">
+                        <label for="cap">CAP</label>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-3 col-lg-2">
+                      <div class="form-floating">
+                        <input disabled type="text" class="form-control" id="provincia" name="provincia" placeholder="Inserisci Provincia">
+                        <label for="provincia">Provincia</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating mb-2">
+                        <select id="select_quartiere" class="form-select" aria-label="Quartiere Immobile">
+                          <option disabled selected>Seleziona Quartiere Immobile</option>
+                        </select>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Tipo non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="prezzo_fitto" id="prezzo_fitto" placeholder="Prezzo Fitto" pattern="^[\p{L} ]+$" required>
+                        <label for="prezzo_fitto">Prezzo Fitto</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Prezzo Fitto non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="prezzo_vendita" id="prezzo_vendita" placeholder="Prezzo Vendita" pattern="^[\p{L} ]+$" required>
+                        <label for="prezzo_vendita">Prezzo Vendita</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Prezzo Vendita non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="acquisitore" id="acquisitore" placeholder="Acquisitore" pattern="^[\p{L} ]+$" required>
+                        <label for="acquisitore">Acquisitore</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Acquisitore non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                        <div class="result-acquisitore">
+                          <ul class="list" id="list-acquisitore">
+
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="superficie" id="superficie" placeholder="Superficie" pattern="^[\p{L} ]+$" required>
+                        <label for="prezzo_fitto">Superficie MQ</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Superficie MQ non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="camere_letto" id="camere_letto" placeholder="Camere Letto" pattern="^[\p{L} ]+$" required>
+                        <label for="prezzo_vendita">Camere Letto</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Camere Letto non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="piano" id="piano" placeholder="Piano" pattern="^[\p{L} ]+$" required>
+                        <label for="piano">Piano</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Piano non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="terrazzi" id="terrazzi" placeholder="Terrazzi" pattern="^[\p{L} ]+$" required>
+                        <label for="terrazzi">Terrazzi</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Terrazzi non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="prezzo_fitto" id="prezzo_fitto" placeholder="Prezzo Fitto" pattern="^[\p{L} ]+$" required>
+                        <label for="prezzo_fitto">Prezzo Fitto</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Prezzo Fitto non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="vani" id="vani" placeholder="Vani" pattern="^[\p{L} ]+$" required>
+                        <label for="vani">Vani</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Vani non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="prezzo_fitto" id="prezzo_fitto" placeholder="Prezzo Fitto" pattern="^[\p{L} ]+$" required>
+                        <label for="prezzo_fitto">Prezzo Fitto</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Prezzo Fitto non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="mq_terrazzi" id="mq_terrazzi" placeholder="MQ Terrazzi" pattern="^[\p{L} ]+$" required>
+                        <label for="mq_terrazzi">MQ Terrazzi</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          MQ Terrazzi non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="bagni" id="bagni" placeholder="Bagni" pattern="^[\p{L} ]+$" required>
+                        <label for="bagni">Bagni</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Bagni non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="anno_costruzione" id="anno_costruzione" placeholder="Anno Costruzione" pattern="^[\p{L} ]+$" required>
+                        <label for="anno_costruzione">Anno Costruzione</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Anno Costruzione non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="box" id="box" placeholder="Box" pattern="^[\p{L} ]+$" required>
+                        <label for="box">Box</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Box non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="perche_vende" id="perche_vende" placeholder="Perché Vende" pattern="^[\p{L} ]+$" required>
+                        <label for="perche_vende">Perché Vende</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Perché Vende non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="fonte" id="fonte" placeholder="fonte" pattern="^[\p{L} ]+$" required>
+                        <label for="fonte">Fonte</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Fonte non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" name="sdegnalatore" id="segnalatore" placeholder="Segnalatore" pattern="^[\p{L} ]+$" required>
+                        <label for="segnalatore">Segnalatore</label>
+                        <div class="valid-feedback">
+                          Inserimento corretto!
+                        </div>
+                        <div class="invalid-feedback">
+                          Segnalatore non può essere vuoto, contenere caratteri speciali o numeri.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6"></div>
+            </form>
         </div>
         <div class="tab-pane fade" id="pills-immagini" role="tabpanel" aria-labelledby="immagini-tab" tabindex="0">
           <p class="fs-5 text-altblue">Immagini</p>
@@ -387,7 +715,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../../../papaparse/papaparse.min.js"></script>
-<script src="../../../scripts/read-comuni.js"></script>
-<script src="../../../scripts/archivio/clienti/nuovo-immobile.js"></script>
+<script src="../../../scripts/archivio/immobili/read-comuni-immobili.js"></script>
+<script src="../../../scripts/archivio/immobili/nuovo-immobile.js"></script>
 
 </html>
