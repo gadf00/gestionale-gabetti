@@ -22,3 +22,12 @@ label{
     z-index: 1;
     background-color: #303442;
 }
+
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
