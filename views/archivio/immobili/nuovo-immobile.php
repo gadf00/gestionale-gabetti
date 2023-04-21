@@ -19,29 +19,14 @@
     </div>
     <div class="card bg-white">
       <div class="card-header">
-        <ul class="nav nav-pills nav-fill gap-2 p-1 small rounded-2" id="pillNav2" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active rounded-2" id="generale-tab" data-bs-toggle="pill" data-bs-target="#pills-generale" type="button" role="tab" aria-controls="pills-generale" aria-selected="true">Generale</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link rounded-2" id="altridati-tab" data-bs-toggle="pill" data-bs-target="#pills-altridati" type="button" role="tab" aria-controls="pills-altridati" aria-selected="false">Altri Dati</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link rounded-2" id="immagini-tab" data-bs-toggle="pill" data-bs-target="#pills-immagini" type="button" role="tab" aria-controls="pills-immagini" aria-selected="false">Immagini</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link rounded-2" id="caratteristiche-tab" data-bs-toggle="pill" data-bs-target="#pills-caratteristiche" type="button" role="tab" aria-controls="pills-caratteristiche" aria-selected="false">Caratteristiche</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link rounded-2" id="importanti-tab" data-bs-toggle="pill" data-bs-target="#pills-importanti" type="button" role="tab" aria-controls="pills-importanti" aria-selected="false">Dati Importanti</button>
-          </li>
-        </ul>
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 1%"></div>
+        </div>
       </div>
       <div class="card-body">
-        <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-generale" role="tabpanel" aria-labelledby="generale-tab" tabindex="0">
+      <div style="display:block;" id="generale_div">
             <p class="fs-5 text-altblue">Generale</p>
-            <form class="mb-3 row g-4 form-floating needs-validation" id="generale" novalidate>
+            <form class="mb-3 row g-4 form-floating needs-validation" id="form-nuovo-immobile" novalidate>
               <div class="row g-2">
                 <div class="col-6">
                   <div class="row g-2">
@@ -193,7 +178,7 @@
                     <div class="col-6">
                       <div class="form-floating">
                         <input type="text" class="form-control" name="superficie" id="superficie" placeholder="Superficie" pattern="^[\p{L} ]+$" required>
-                        <label for="prezzo_fitto">Superficie MQ</label>
+                        <label for="superficie">Superficie MQ</label>
                         <div class="valid-feedback">
                           Inserimento corretto!
                         </div>
@@ -240,18 +225,6 @@
                     </div>
                     <div class="col-6">
                       <div class="form-floating">
-                        <input type="text" class="form-control" name="prezzo_fitto" id="prezzo_fitto" placeholder="Prezzo Fitto" pattern="^[\p{L} ]+$" required>
-                        <label for="prezzo_fitto">Prezzo Fitto</label>
-                        <div class="valid-feedback">
-                          Inserimento corretto!
-                        </div>
-                        <div class="invalid-feedback">
-                          Prezzo Fitto non può essere vuoto, contenere caratteri speciali o numeri.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="form-floating">
                         <input type="text" class="form-control" name="vani" id="vani" placeholder="Vani" pattern="^[\p{L} ]+$" required>
                         <label for="vani">Vani</label>
                         <div class="valid-feedback">
@@ -259,18 +232,6 @@
                         </div>
                         <div class="invalid-feedback">
                           Vani non può essere vuoto, contenere caratteri speciali o numeri.
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="form-floating">
-                        <input type="text" class="form-control" name="prezzo_fitto" id="prezzo_fitto" placeholder="Prezzo Fitto" pattern="^[\p{L} ]+$" required>
-                        <label for="prezzo_fitto">Prezzo Fitto</label>
-                        <div class="valid-feedback">
-                          Inserimento corretto!
-                        </div>
-                        <div class="invalid-feedback">
-                          Prezzo Fitto non può essere vuoto, contenere caratteri speciali o numeri.
                         </div>
                       </div>
                     </div>
@@ -365,13 +326,9 @@
             </form>
           </div>
           <div class="col">
-            <button type="submit" class="btn btn-altblue text-white mb-3">
-              Salva Cliente
-            </button>
+            <button class="btn btn-altblue text-white mb-3" id="altri_dati_button" type="button">Avanti</button>
           </div>
-          </form>
-        </div>
-        <div class="tab-pane fade" id="pills-altridati" role="tabpanel" aria-labelledby="altridati-tab" tabindex="0">
+        <div style="display:none;" id="altri_dati_div">
           <p class="fs-5 text-altblue">Altri Dati</p>
           <form class="mb-3 row g-4 form-floating needs-validation" id="altridati" novalidate>
             <div class="row g-2">
@@ -642,5 +599,6 @@
 <script src="../../../papaparse/papaparse.min.js"></script>
 <script src="../../../scripts/archivio/immobili/read-comuni-immobili.js"></script>
 <script src="../../../scripts/archivio/immobili/nuovo-immobile.js"></script>
+<script src="../../../scripts/archivio/immobili/tabs-immobile.js"></script>
 
 </html>

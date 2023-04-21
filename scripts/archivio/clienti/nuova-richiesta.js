@@ -76,36 +76,36 @@ $(document).ready(function () {
       }
       var costo_max = 0.0;
       if ($("#costo_max").val() != "") {
-        costo_min = $("#costo_max").val();
+        costo_max = $("#costo_max").val();
       }
       var superficie_min = 0.0;
       if ($("#superficie_min").val() != "") {
-        costo_min = $("#superficie_min").val();
+        superficie_min = $("#superficie_min").val();
       }
 
       var piano_min = 0;
       if ($("#piano_min").val() != "") {
-        costo_min = $("#piano_min").val();
+        piano_min = $("#piano_min").val();
       }
       var piano_max = 0;
       if ($("#piano_max").val() != "") {
-        costo_min = $("#piano_max").val();
+        piano_max = $("#piano_max").val();
       }
       var vano_min = 0;
       if ($("#vano_min").val() != "") {
-        costo_min = $("#vano_min").val();
+        vano_min = $("#vano_min").val();
       }
       var bagno_min = 0;
       if ($("#bagno_min").val() != "") {
-        costo_min = $("#bagno_min").val();
+        bagno_min = $("#bagno_min").val();
       }
       var camera_letto_min = 0;
       if ($("#camera_letto_min").val() != "") {
-        costo_min = $("#camera_letto_min").val();
+        camera_letto_min = $("#camera_letto_min").val();
       }
       var anno_costruzione_min = 0;
       if ($("#anno_costruzione_min").val() != "") {
-        costo_min = $("#anno_costruzione_min").val();
+        anno_costruzione_min = $("#anno_costruzione_min").val();
       }
       var note = $("#note").val();
       var id_cliente = $("#id_cliente").val();
