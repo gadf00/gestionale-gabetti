@@ -19,28 +19,23 @@
     </div>
     <div class="card bg-white">
       <div class="card-header">
-        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuemin="0"
-          aria-valuemax="100">
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="100">
           <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" style="width:1%;"></div>
         </div>
       </div>
       <div class="card-body">
         <div class="d-flex gap-2">
           <div id="indietro_generale_div" class="hide">
-            <button class="btn btn-altblue text-white mb-3" id="indietro_generale_button"
-              type="button">Indietro</button>
+            <button class="btn btn-altblue text-white mb-3" id="indietro_generale_button" type="button">Indietro</button>
           </div>
           <div id="indietro_altri_dati_div" class="hide">
-            <button class="btn btn-altblue text-white mb-3" id="indietro_altri_dati_button"
-              type="button">Indietro</button>
+            <button class="btn  text-white mb-3" id="indietro_altri_dati_button" type="button">Indietro</button>
           </div>
           <div id="indietro_immagini_div" class="hide">
-            <button class="btn btn-altblue text-white mb-3" id="indietro_immagini_button"
-              type="button">Indietro</button>
+            <button class="btn btn-altblue text-white mb-3" id="indietro_immagini_button" type="button">Indietro</button>
           </div>
           <div id="indietro_caratteristiche_div" class="hide">
-            <button class="btn btn-altblue text-white mb-3" id="indietro_caratteristiche_button"
-              type="button">Indietro</button>
+            <button class="btn btn-altblue text-white mb-3" id="indietro_caratteristiche_button" type="button">Indietro</button>
           </div>
           <div class="show" id="avanti_altri_dati_div">
             <button class="btn btn-altblue text-white mb-3" id="altri_dati_button" type="button">Avanti</button>
@@ -67,8 +62,7 @@
                 <div class="row g-2">
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="date" class="form-control" name="data_registrazione" id="data_registrazione"
-                        placeholder="Data Registrazione" pattern="^[\p{L} ]+$" required>
+                      <input type="date" class="form-control" name="data_registrazione" id="data_registrazione" placeholder="Data Registrazione" pattern="^[\p{L} ]+$" required>
                       <label for="data_registrazione">Data Registrazione</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -80,8 +74,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="descrizione" id="descrizione"
-                        placeholder="Descrizione" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="descrizione" id="descrizione" placeholder="Descrizione" pattern="^[\p{L} ]+$" required>
                       <label for="descrizione">Descrizione</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -119,9 +112,7 @@
                   </div>
                   <div class="col-12 col-lg-4">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="indirizzo" id="indirizzo"
-                        placeholder="Inserisci Indirizzo" required
-                        pattern="^[A-Za-zàèéìòù\s]+(\s+(di|del|della|dei|degli|delle)\s+[A-Za-zàèéìòù\s]+)?(?:,\s*\d{1,4})?([A-Za-z]{0,1}\/[A-Za-z]{0,1}\s*)?$">
+                      <input type="text" class="form-control" name="indirizzo" id="indirizzo" placeholder="Inserisci Indirizzo" required pattern="^[A-Za-zàèéìòù\s]+(\s+(di|del|della|dei|degli|delle)\s+[A-Za-zàèéìòù\s]+)?(?:,\s*\d{1,4})?([A-Za-z]{0,1}\/[A-Za-z]{0,1}\s*)?$">
                       <label for="indirizzo">Indirizzo</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -134,8 +125,7 @@
                   </div>
                   <div class="col-12 col-md-6 col-lg-4">
                     <div class="form-floating">
-                      <input type="text" class="form-control" id="localita" name="localita"
-                        placeholder="Inserisci Località" required>
+                      <input type="text" class="form-control" id="localita" name="localita" placeholder="Inserisci Località" required>
                       <label for="localita">Località</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -158,8 +148,7 @@
                   </div>
                   <div class="col-12 col-md-3 col-lg-2">
                     <div class="form-floating">
-                      <input disabled type="text" class="form-control" id="provincia" name="provincia"
-                        placeholder="Inserisci Provincia">
+                      <input disabled type="text" class="form-control" id="provincia" name="provincia" placeholder="Inserisci Provincia">
                       <label for="provincia">Provincia</label>
                     </div>
                   </div>
@@ -178,8 +167,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="prezzo_fitto" id="prezzo_fitto"
-                        placeholder="Prezzo Fitto" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="prezzo_fitto" id="prezzo_fitto" placeholder="Prezzo Fitto" pattern="^[\p{L} ]+$" required>
                       <label for="prezzo_fitto">Prezzo Fitto</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -191,8 +179,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="prezzo_vendita" id="prezzo_vendita"
-                        placeholder="Prezzo Vendita" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="prezzo_vendita" id="prezzo_vendita" placeholder="Prezzo Vendita" pattern="^[\p{L} ]+$" required>
                       <label for="prezzo_vendita">Prezzo Vendita</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -204,8 +191,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="acquisitore" id="acquisitore"
-                        placeholder="Acquisitore" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="acquisitore" id="acquisitore" placeholder="Acquisitore" pattern="^[\p{L} ]+$" required>
                       <label for="acquisitore">Acquisitore</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -222,8 +208,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="superficie" id="superficie" placeholder="Superficie"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="superficie" id="superficie" placeholder="Superficie" pattern="^[\p{L} ]+$" required>
                       <label for="superficie">Superficie MQ</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -235,8 +220,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="camere_letto" id="camere_letto"
-                        placeholder="Camere Letto" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="camere_letto" id="camere_letto" placeholder="Camere Letto" pattern="^[\p{L} ]+$" required>
                       <label for="prezzo_vendita">Camere Letto</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -248,8 +232,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="piano" id="piano" placeholder="Piano"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="piano" id="piano" placeholder="Piano" pattern="^[\p{L} ]+$" required>
                       <label for="piano">Piano</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -261,8 +244,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="terrazzi" id="terrazzi" placeholder="Terrazzi"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="terrazzi" id="terrazzi" placeholder="Terrazzi" pattern="^[\p{L} ]+$" required>
                       <label for="terrazzi">Terrazzi</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -274,8 +256,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="vani" id="vani" placeholder="Vani"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="vani" id="vani" placeholder="Vani" pattern="^[\p{L} ]+$" required>
                       <label for="vani">Vani</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -287,8 +268,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="mq_terrazzi" id="mq_terrazzi"
-                        placeholder="MQ Terrazzi" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="mq_terrazzi" id="mq_terrazzi" placeholder="MQ Terrazzi" pattern="^[\p{L} ]+$" required>
                       <label for="mq_terrazzi">MQ Terrazzi</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -300,8 +280,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="bagni" id="bagni" placeholder="Bagni"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="bagni" id="bagni" placeholder="Bagni" pattern="^[\p{L} ]+$" required>
                       <label for="bagni">Bagni</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -313,8 +292,7 @@
                   </div>
                   <div class="col-6">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="anno_costruzione" id="anno_costruzione"
-                        placeholder="Anno Costruzione" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="anno_costruzione" id="anno_costruzione" placeholder="Anno Costruzione" pattern="^[\p{L} ]+$" required>
                       <label for="anno_costruzione">Anno Costruzione</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -326,8 +304,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="box" id="box" placeholder="Box"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="box" id="box" placeholder="Box" pattern="^[\p{L} ]+$" required>
                       <label for="box">Box</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -339,8 +316,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="perche_vende" id="perche_vende"
-                        placeholder="Perché Vende" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="perche_vende" id="perche_vende" placeholder="Perché Vende" pattern="^[\p{L} ]+$" required>
                       <label for="perche_vende">Perché Vende</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -352,8 +328,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="fonte" id="fonte" placeholder="fonte"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="fonte" id="fonte" placeholder="fonte" pattern="^[\p{L} ]+$" required>
                       <label for="fonte">Fonte</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -365,8 +340,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="sdegnalatore" id="segnalatore"
-                        placeholder="Segnalatore" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="sdegnalatore" id="segnalatore" placeholder="Segnalatore" pattern="^[\p{L} ]+$" required>
                       <label for="segnalatore">Segnalatore</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -391,8 +365,7 @@
                 <div class="row g-2">
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="tipo_costruzione" id="tipo_costruzione"
-                        placeholder="Tipo Costruzione" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="tipo_costruzione" id="tipo_costruzione" placeholder="Tipo Costruzione" pattern="^[\p{L} ]+$" required>
                       <label for="tipo_costruzione">Tipo Costruzione</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -404,8 +377,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="facciata" id="facciata" placeholder="Facciata"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="facciata" id="facciata" placeholder="Facciata" pattern="^[\p{L} ]+$" required>
                       <label for="facciata">Facciata</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -417,8 +389,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="manutenzione" id="manutenzione"
-                        placeholder="Manutenzione" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="manutenzione" id="manutenzione" placeholder="Manutenzione" pattern="^[\p{L} ]+$" required>
                       <label for="manutenzione">Manutenzione</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -430,8 +401,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="soggiorno" id="soggiorno" placeholder="Soggiorno"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="soggiorno" id="soggiorno" placeholder="Soggiorno" pattern="^[\p{L} ]+$" required>
                       <label for="soggiorno">Soggiorno</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -443,8 +413,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="pavimenti" id="pavimenti" placeholder="Pavimenti"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="pavimenti" id="pavimenti" placeholder="Pavimenti" pattern="^[\p{L} ]+$" required>
                       <label for="pavimenti">Pavimenti</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -456,8 +425,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="rivestimenti" id="rivestimenti"
-                        placeholder="Rivestimenti" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="rivestimenti" id="rivestimenti" placeholder="Rivestimenti" pattern="^[\p{L} ]+$" required>
                       <label for="rivestimenti">Rivestimenti</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -469,8 +437,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="riscaldamento" id="riscaldamento"
-                        placeholder="Riscaldamento" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="riscaldamento" id="riscaldamento" placeholder="Riscaldamento" pattern="^[\p{L} ]+$" required>
                       <label for="riscaldamento">Riscaldamento</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -482,8 +449,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="impianto_elettrico" id="impianto_elettrico"
-                        placeholder="Impianto Elettrico" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="impianto_elettrico" id="impianto_elettrico" placeholder="Impianto Elettrico" pattern="^[\p{L} ]+$" required>
                       <label for="impianto_elettrico">Impianto Elettrico</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -495,8 +461,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="impianto_idrico" id="impianto_idrico"
-                        placeholder="Impianto Idrico" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="impianto_idrico" id="impianto_idrico" placeholder="Impianto Idrico" pattern="^[\p{L} ]+$" required>
                       <label for="impianto_idrico">Impianto Idrico</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -508,8 +473,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="impianto_gas" id="impianto_gas"
-                        placeholder="Impianto Gas" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="impianto_gas" id="impianto_gas" placeholder="Impianto Gas" pattern="^[\p{L} ]+$" required>
                       <label for="impianto_gas">Impianto Gas</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -521,8 +485,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="impianto_anti_incendio" id="impianto_anti_incendio"
-                        placeholder="Impianto Anti Incendio" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="impianto_anti_incendio" id="impianto_anti_incendio" placeholder="Impianto Anti Incendio" pattern="^[\p{L} ]+$" required>
                       <label for="impianto_anti_incendio">Impianto Anti Incendio</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -534,8 +497,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="serramenti" id="serramenti" placeholder="Serramenti"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="serramenti" id="serramenti" placeholder="Serramenti" pattern="^[\p{L} ]+$" required>
                       <label for="serramenti">Serramenti</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -547,8 +509,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="condizionamento" id="condizionamento"
-                        placeholder="Condizionamento" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="condizionamento" id="condizionamento" placeholder="Condizionamento" pattern="^[\p{L} ]+$" required>
                       <label for="condizionamento">Condizionamento</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -560,8 +521,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="occupato" id="occupato" placeholder="Occupato"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="occupato" id="occupato" placeholder="Occupato" pattern="^[\p{L} ]+$" required>
                       <label for="occupato">Occupato</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -573,8 +533,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="libero" id="libero" placeholder="Libero"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="libero" id="libero" placeholder="Libero" pattern="^[\p{L} ]+$" required>
                       <label for="libero">Libero</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -586,8 +545,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="orario_visite" id="orario_visite"
-                        placeholder="Orario Visite" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="orario_visite" id="orario_visite" placeholder="Orario Visite" pattern="^[\p{L} ]+$" required>
                       <label for="orario_visite">Orario Visite</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -599,8 +557,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="chiavi_presso" id="chiavi_presso"
-                        placeholder="Chiavi Presso" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="chiavi_presso" id="chiavi_presso" placeholder="Chiavi Presso" pattern="^[\p{L} ]+$" required>
                       <label for="chiavi_presso">Chiavi Presso</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -612,8 +569,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="varie" id="varie" placeholder="Varie"
-                        pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="varie" id="varie" placeholder="Varie" pattern="^[\p{L} ]+$" required>
                       <label for="varie">Varie</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -630,22 +586,19 @@
                 <div class="row g-2">
                   <div class="col-12">
                     <div class="form-floating">
-                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
-                        style="height: 200px"></textarea>
+                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 200px"></textarea>
                       <label for="floatingTextarea">Primo</label>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
-                        style="height: 200px"></textarea>
+                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 200px"></textarea>
                       <label for="floatingTextarea">Secondo</label>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
-                        style="height: 200px"></textarea>
+                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 200px"></textarea>
                       <label for="floatingTextarea">Terzo</label>
                     </div>
                   </div>
@@ -659,6 +612,14 @@
         </div>
         <div class="hide" id="caratteristiche_div">
           <p class="fs-5 text-altblue">Caratteristiche</p>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="p-3 border rounded-2 border-altdark">
+                <p class="fs-6 text-altblue">Caratteristiche</p>
+                <div id="caratteristiche"></div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="hide" id="dati_importanti_div">
           <p class="fs-5 text-altblue">Dati Importanti</p>
@@ -668,8 +629,7 @@
                 <div class="row g-2">
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="proprietario" id="proprietario"
-                        placeholder="Proprietario" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="proprietario" id="proprietario" placeholder="Proprietario" pattern="^[\p{L} ]+$" required>
                       <label for="proprietario">Proprietario</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -681,8 +641,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="notaio_scelto" id="notaio_scelto"
-                        placeholder="notaio_scelto" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="notaio_scelto" id="notaio_scelto" placeholder="notaio_scelto" pattern="^[\p{L} ]+$" required>
                       <label for="notaio_scelto">Notaio Scelto</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -694,8 +653,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="visure" id="visure"
-                        placeholder="Visure" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="visure" id="visure" placeholder="Visure" pattern="^[\p{L} ]+$" required>
                       <label for="visure">Visure</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -707,8 +665,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="text" class="form-control" name="consegna_visure" id="consegna_visure"
-                        placeholder="Consegna Visure all'Acquirente" pattern="^[\p{L} ]+$" required>
+                      <input type="text" class="form-control" name="consegna_visure" id="consegna_visure" placeholder="Consegna Visure all'Acquirente" pattern="^[\p{L} ]+$" required>
                       <label for="consegna_visure">Consegna Visure all'Acquirente</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -720,8 +677,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="date" class="form-control" name="fine_incarico" id="fine_incarico"
-                        placeholder="Fine Incarico" pattern="^[\p{L} ]+$" required>
+                      <input type="date" class="form-control" name="fine_incarico" id="fine_incarico" placeholder="Fine Incarico" pattern="^[\p{L} ]+$" required>
                       <label for="fine_incarico">Fine Incarico</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -733,8 +689,7 @@
                   </div>
                   <div class="col-12">
                     <div class="form-floating">
-                      <input type="date" class="form-control" name="seconda_scadenza" id="seconda_scadenza"
-                        placeholder="Seconda Scadenza" pattern="^[\p{L} ]+$" required>
+                      <input type="date" class="form-control" name="seconda_scadenza" id="seconda_scadenza" placeholder="Seconda Scadenza" pattern="^[\p{L} ]+$" required>
                       <label for="seconda_scadenza">Seconda Scadenza</label>
                       <div class="valid-feedback">
                         Inserimento corretto!
@@ -751,8 +706,7 @@
                 <div class="row g-2">
                   <div class="col-12">
                     <div class="form-floating">
-                      <textarea class="form-control" placeholder="Annotazione" id="annotazione"
-                        style="height: 200px"></textarea>
+                      <textarea class="form-control" placeholder="Annotazione" id="annotazione" style="height: 200px"></textarea>
                       <label for="annotazione">Annotazione</label>
                     </div>
                   </div>
@@ -760,7 +714,7 @@
               </div>
             </div>
           </form>
-        
+
         </div>
       </div>
     </div>
@@ -768,8 +722,7 @@
   </div>
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../../../papaparse/papaparse.min.js"></script>

@@ -4,6 +4,7 @@ $(document).ready(function () {
   var tipi_immobili;
   const select_tipo = $("#select_tipo");
   const select_sotto_tipo = $("#select_sotto_tipo");
+
   $.ajax({
     url: "../../../control/tabelle/tipi-immobili/lista-tipi-immobili.php",
     dataType: "json",
@@ -37,30 +38,59 @@ $(document).ready(function () {
       console.log(xhr.responseText);
     });
 
-    $.ajax({
-        url:"../../../control/archivio/clienti/lista-clienti.php",
-        dataType: "json",
-        async: false,
-    })
-        .done(function(response){
-            let acquisitore = document.getElementById("acquisitore");
-            acquisitore.addEventListener("keyup", (e) =>{
-                removeElementsAcquisitore();
-                for(let i of response){
-                    if(i.nominativo.toLowerCase().startsWith(acquisitore.value.toLowerCase()) && acquisitore.value != ""){
-                        console.log(i.nominativo);
-                        let listAcquisitori = document.createElement("li");
-                        listAcquisitori.classList.add("list-items");
-                        listAcquisitori.style.cursor = "pointer";
-                        listAcquisitori.setAttribute("onclick", "displayNamesAcquisitore('"+i.nominativo+"')");
-                        let word = "<b>" + i.nominativo.substr(0,acquisitore.value.length) + "</b>";
-                        word += i.nominativo.substr(acquisitore.value.length);
-                        listAcquisitori.innerHTML = word;
-                        document.querySelector("#list-acquisitore").appendChild(listAcquisitori);
-                    }
-                }
-            })
-        })
+  $.ajax({
+    url: "../../../control/archivio/clienti/lista-clienti.php",
+    dataType: "json",
+    async: false,
+  }).done(function (response) {
+    let acquisitore = document.getElementById("acquisitore");
+    acquisitore.addEventListener("keyup", (e) => {
+      removeElementsAcquisitore();
+      for (let i of response) {
+        if (
+          i.nominativo
+            .toLowerCase()
+            .startsWith(acquisitore.value.toLowerCase()) &&
+          acquisitore.value != ""
+        ) {
+          console.log(i.nominativo);
+          let listAcquisitori = document.createElement("li");
+          listAcquisitori.classList.add("list-items");
+          listAcquisitori.style.cursor = "pointer";
+          listAcquisitori.setAttribute(
+            "onclick",
+            "displayNamesAcquisitore('" + i.nominativo + "')"
+          );
+          let word =
+            "<b>" + i.nominativo.substr(0, acquisitore.value.length) + "</b>";
+          word += i.nominativo.substr(acquisitore.value.length);
+          listAcquisitori.innerHTML = word;
+          document
+            .querySelector("#list-acquisitore")
+            .appendChild(listAcquisitori);
+        }
+      }
+    });
+  });
+
+  var caratteristiche;
+  const caratteristiche_div = $("#caratteristiche");
+  caratteristiche_div.empty();
+  $.ajax({
+    url: "../../../control/tabelle/caratteristiche/lista-caratteristiche.php",
+    dataType: "json",
+    async: false,
+    success: function (response) {
+      caratteristiche = response;
+      caratteristiche.forEach((caratteristica) => {
+        aggiungiRigaCaratteristica(caratteristiche_div, caratteristica);
+      });
+    },
+    error: function (xhr, status, error) {
+      // Gestisci eventuali errori
+      console.log(xhr.responseText);
+    },
+  });
 
   $("#nuovo-immobile").click(function (event) {
     event.preventDefault();
@@ -162,7 +192,7 @@ $(document).ready(function () {
         },
       });
     }
-    $('#form-nuovo-immobile').addClass("was-validated");
+    $("#form-nuovo-immobile").addClass("was-validated");
     if (!form_nuovo_immobile.checkValidity()) {
       event.stopPropagation();
     } else {
@@ -242,10 +272,6 @@ $(document).ready(function () {
       var chiavi_presso = $("#chiavi_presso").val();
       var varie = $("#varie").val();
 
-
-
-
-
       $.ajax({
         url: "../../../control/archivio/clienti/nuova-richiesta.php",
         type: "POST",
@@ -295,7 +321,7 @@ $(document).ready(function () {
         },
       });
     }
-    $('#form-nuovo-immobile').addClass("was-validated");
+    $("#form-nuovo-immobile").addClass("was-validated");
   });
 });
 
@@ -319,17 +345,36 @@ function aggiungiRigaQuartiere(select_quartiere, quartiere) {
   select_quartiere.append(optionHtml);
 }
 
+function displayNamesAcquisitore(value) {
+  let acquisitore = document.getElementById("acquisitore");
+  acquisitore.value = value;
 
-function displayNamesAcquisitore(value){
-    let acquisitore = document.getElementById("acquisitore");
-    acquisitore.value = value;
-
-    removeElementsAcquisitore();
+  removeElementsAcquisitore();
 }
 
-function removeElementsAcquisitore(){
-    let items = document.querySelectorAll(".list-items");
-    items.forEach((item) =>{
-        item.remove();
-    })
+function removeElementsAcquisitore() {
+  let items = document.querySelectorAll(".list-items");
+  items.forEach((item) => {
+    item.remove();
+  });
+}
+
+
+function aggiungiRigaCaratteristica(caratteristiche_div, caratteristica) {
+  const radioHtml =
+    "<div class='form-check'>" +
+    "<input class='form-check-input' type='checkbox' name='caratteristica-" +
+    caratteristica.id_caratteristica +
+    "' id='" +
+    caratteristica.id_caratteristica +
+    "' value='" +
+    caratteristica.id_caratteristica +
+    "'>" +
+    "<label class='form-check-label' for='" +
+    caratteristica.id_caratteristica +
+    "'>" +
+    caratteristica.caratteristica +
+    "</label>" +
+    "</div>";
+  caratteristiche_div.append(radioHtml);
 }
