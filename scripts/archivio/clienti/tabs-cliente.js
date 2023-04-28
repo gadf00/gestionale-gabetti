@@ -1,19 +1,23 @@
 $(document).ready(function () {
     $('#altri_dati_button').click(function(){
-        $('#anagrafica_div').removeClass("show");
-        $('#anagrafica_div').addClass("hide");
-
-        $('#altri_dati_div').addClass("show");
-        $('#altri_dati_div').removeClass("hide");
-        $('#indietro_anagrafica_div').removeClass("hide");
-        $('#indietro_anagrafica_div').addClass("show");
-        $('#progress-bar').css('width','25%');
-
-        $('#avanti_altri_dati_div').addClass("hide");
-        $('#avanti_altri_dati_div').removeClass("show");
-
-        $('#avanti_documenti_div').addClass("show");
-        $('#avanti_documenti_div').removeClass("hide");
+        var anagrafica = $("#anagrafica")[0];
+        if(anagrafica.checkValidity()){
+            $('#anagrafica_div').removeClass("show");
+            $('#anagrafica_div').addClass("hide");
+    
+            $('#altri_dati_div').addClass("show");
+            $('#altri_dati_div').removeClass("hide");
+            $('#indietro_anagrafica_div').removeClass("hide");
+            $('#indietro_anagrafica_div').addClass("show");
+            $('#progress-bar').css('width','25%');
+    
+            $('#avanti_altri_dati_div').addClass("hide");
+            $('#avanti_altri_dati_div').removeClass("show");
+    
+            $('#avanti_documenti_div').addClass("show");
+            $('#avanti_documenti_div').removeClass("hide");
+        }
+        $("#anagrafica").addClass("was-validated");
     });
     $('#documenti_button').click(function(){
         $('#indietro_anagrafica_div').removeClass("show");

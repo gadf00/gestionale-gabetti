@@ -8,6 +8,7 @@
   <title>Nuovo Cliente</title>
   <link rel="stylesheet" href="../../../css/main.min.css">
   <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 </head>
 
@@ -19,20 +20,25 @@
     </div>
     <div class="card bg-white">
       <div class="card-header">
-        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="100">
-          <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" style="width:1%;"></div>
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuemin="0"
+          aria-valuemax="100">
+          <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" style="width:1%;">
+          </div>
         </div>
       </div>
       <div class="card-body">
         <div class="d-flex gap-2">
           <div id="indietro_anagrafica_div" class="hide">
-            <button class="btn btn-altblue text-white mb-3" id="indietro_anagrafica_button" type="button">Indietro</button>
+            <button class="btn btn-altblue text-white mb-3" id="indietro_anagrafica_button"
+              type="button">Indietro</button>
           </div>
           <div id="indietro_altri_dati_div" class="hide">
-            <button class="btn btn-altblue text-white mb-3" id="indietro_altri_dati_button" type="button">Indietro</button>
+            <button class="btn btn-altblue text-white mb-3" id="indietro_altri_dati_button"
+              type="button">Indietro</button>
           </div>
           <div id="indietro_documenti_div" class="hide">
-            <button class="btn btn-altblue text-white mb-3" id="indietro_documenti_button" type="button">Indietro</button>
+            <button class="btn btn-altblue text-white mb-3" id="indietro_documenti_button"
+              type="button">Indietro</button>
           </div>
           <div class="show" id="avanti_altri_dati_div">
             <button class="btn btn-altblue text-white mb-3" id="altri_dati_button" type="button">Avanti</button>
@@ -44,7 +50,8 @@
             <button class="btn btn-altblue text-white mb-3" id="postit_button" type="button">Avanti</button>
           </div>
           <div class="hide" id="salva_cliente_div">
-            <button class="btn btn-altblue text-white mb-3" id="salva_cliente_button" type="button">Salva Cliente</button>
+            <button class="btn btn-altblue text-white mb-3" id="salva_cliente_button" type="button">Salva
+              Cliente</button>
           </div>
         </div>
         <div class="show" id="anagrafica_div">
@@ -60,7 +67,8 @@
             </div>
             <div class="col-12 col-sm-6">
               <div class="form-floating">
-                <input type="text" class="form-control" name="nominativo" id="nominativo" placeholder="Nominativo Cliente" pattern="^[\p{L} ]+$" required>
+                <input type="text" class="form-control" name="nominativo" id="nominativo"
+                  placeholder="Nominativo Cliente" pattern="^[\p{L} ]+$" required>
                 <label for="nominativo">Nominativo</label>
                 <div class="valid-feedback">
                   Inserimento corretto!
@@ -72,7 +80,9 @@
             </div>
             <div class="col-12 col-sm-6">
               <div class="form-floating">
-                <input type="date" class="form-control" name="data_registrazione" id="data_registrazione" placeholder="Data Registrazione" required pattern="^(?:(?:31\/(?:0?[13578]|1[02]))\/|(?:(?:29|30)\/(?:0?[1,3-9]|1[0-2])\/))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29\/0?2\/(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:16|[2468][048]|[3579][26])00)))$|^(?:0?[1-9]|1\d|2[0-8])\/(?:0?[1-9]|1[0-2])\/(?:(?:1[6-9]|[2-9]\d)?\d{2})$">
+                <input type="date" class="form-control" name="data_registrazione" id="data_registrazione"
+                  placeholder="Data Registrazione" required
+                  pattern="^(?:(?:31\/(?:0?[13578]|1[02]))\/|(?:(?:29|30)\/(?:0?[1,3-9]|1[0-2])\/))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29\/0?2\/(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:16|[2468][048]|[3579][26])00)))$|^(?:0?[1-9]|1\d|2[0-8])\/(?:0?[1-9]|1[0-2])\/(?:(?:1[6-9]|[2-9]\d)?\d{2})$">
                 <label for="data_registrazione">Data Registrazione</label>
                 <div class="valid-feedback">
                   Inserimento corretto!
@@ -84,19 +94,23 @@
             </div>
             <div class="col-12 col-lg-4">
               <div class="form-floating">
-                <input type="text" class="form-control" name="indirizzo" id="indirizzo" placeholder="Inserisci Indirizzo" required pattern="^[A-Za-zàèéìòù\s]+(\s+(di|del|della|dei|degli|delle)\s+[A-Za-zàèéìòù\s]+)?(?:,\s*\d{1,4})?([A-Za-z]{0,1}\/[A-Za-z]{0,1}\s*)?$">
+                <input type="text" class="form-control" name="indirizzo" id="indirizzo"
+                  placeholder="Inserisci Indirizzo" required
+                  pattern="^[A-Za-zàèéìòù\s]+(\s+(di|del|della|dei|degli|delle)\s+[A-Za-zàèéìòù\s]+)?(?:,\s*\d{1,4})?([A-Za-z]{0,1}\/[A-Za-z]{0,1}\s*)?$">
                 <label for="indirizzo">Indirizzo</label>
                 <div class="valid-feedback">
                   Inserimento corretto!
                 </div>
                 <div class="invalid-feedback">
-                  Indirizzo non può essere vuoto, esempi: "Via Roma 1", "Corso di Porta Ticinese 72/A", "Via Giuseppe Garibaldi, 17".
+                  Indirizzo non può essere vuoto, esempi: "Via Roma 1", "Corso di Porta Ticinese 72/A", "Via Giuseppe
+                  Garibaldi, 17".
                 </div>
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
               <div class="form-floating">
-                <input type="text" class="form-control" id="localita" name="localita" placeholder="Inserisci Località" required>
+                <input type="text" class="form-control" id="localita" name="localita" placeholder="Inserisci Località"
+                  required>
                 <label for="localita">Località</label>
                 <div class="valid-feedback">
                   Inserimento corretto!
@@ -119,13 +133,15 @@
             </div>
             <div class="col-12 col-md-3 col-lg-2">
               <div class="form-floating">
-                <input disabled type="text" class="form-control" id="provincia" name="provincia" placeholder="Inserisci Provincia">
+                <input disabled type="text" class="form-control" id="provincia" name="provincia"
+                  placeholder="Inserisci Provincia">
                 <label for="provincia">Provincia</label>
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-floating">
-                <input type="tel" class="form-control" id="telefono1" name="telefono1" placeholder="Inserisci Telefono 1">
+                <input type="tel" class="form-control" id="telefono1" name="telefono1"
+                  placeholder="Inserisci Telefono 1">
                 <label for="telefono1">Telefono Fisso</label>
                 <div class="valid-feedback">
                   Inserimento corretto!
@@ -137,7 +153,8 @@
             </div>
             <div class="col-md-4">
               <div class="form-floating">
-                <input type="text" class="form-control" id="cellulare1" name="cellulare1" placeholder="Inserisci Telefono 2">
+                <input type="text" class="form-control" id="cellulare1" name="cellulare1"
+                  placeholder="Inserisci Telefono 2">
                 <label for="cellulare1">Cellulare 1</label>
                 <div class="valid-feedback">
                   Inserimento corretto!
@@ -149,7 +166,8 @@
             </div>
             <div class="col-md-4">
               <div class="form-floating">
-                <input type="text" class="form-control" id="cellulare2" name="cellulare2" placeholder="Inserisci Telefono 3">
+                <input type="text" class="form-control" id="cellulare2" name="cellulare2"
+                  placeholder="Inserisci Telefono 3">
                 <label for="cellulare2">Cellulare 2</label>
                 <div class="valid-feedback">
                   Inserimento corretto!
@@ -161,7 +179,8 @@
             </div>
             <div class="col-md-5 col-12">
               <div class="form-floating">
-                <input type="text" class="form-control" id="codice_fiscale" name="codice_fiscale" placeholder="Inserisci Codice Fiscale" required pattern="^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$">
+                <input type="text" class="form-control" id="codice_fiscale" name="codice_fiscale"
+                  placeholder="Inserisci Codice Fiscale" required pattern="^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$">
                 <label for="codice_fiscale">Codice Fiscale</label>
                 <div class="valid-feedback">
                   Inserimento corretto!
@@ -193,19 +212,22 @@
             </div>
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="text" class="form-control" id="professione" name="professione" placeholder="Inserisci Professione">
+                <input type="text" class="form-control" id="professione" name="professione"
+                  placeholder="Inserisci Professione">
                 <label for="professione">Professione</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="text" class="form-control" id="acquisitore" name="acquisitore" placeholder="Inserisci Acquisitore">
+                <input type="text" class="form-control" id="acquisitore" name="acquisitore"
+                  placeholder="Inserisci Acquisitore">
                 <label for="acquisitore">Acquisitore</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="text" class="form-control" id="segnalatore" name="segnalatore" placeholder="Inserisci Segnalatore">
+                <input type="text" class="form-control" id="segnalatore" name="segnalatore"
+                  placeholder="Inserisci Segnalatore">
                 <label for="segnalatore">Segnalatore</label>
               </div>
             </div>
@@ -230,36 +252,52 @@
         </div>
         <div class="hide" id="documenti_div">
           <p class="fs-5 text-altblue">Documenti Utente</p>
+          <h1>Upload di file con drag and drop</h1>
+	
+	<div id="drop-zone" class="" dropzone>
+		Trascina qui i file da caricare
+	</div>
+	
+	<input type="file" id="file-input" multiple>
+	
+	<div id="preview"></div>
+          <div class="drop-zone" id="drop-zone">Trascina qui i file o clicca per selezionarli</div>
+          <div class="preview-container" id="preview-container"></div>
         </div>
-        <div class="hide" id="postit_div">
-          <p class="fs-5 text-altblue">Post It Utente</p>
-          <form>
-            <div class="row mb-3 g-3">
-              <div class="col-12">
-                <div class="form-floating">
-                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                  <label for="floatingTextarea2">Comments</label>
+          <div class="hide" id="postit_div">
+            <p class="fs-5 text-altblue">Post It Utente</p>
+            <form>
+              <div class="row mb-3 g-3">
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Primo Postit" id="primo_postit"
+                      style="height: 100px"></textarea>
+                    <label for="primo_postit">Primo</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Secondo Postit" id="secondo_postit"
+                      style="height: 100px"></textarea>
+                    <label for="secondo_postit">Secondo</label>
+                  </div>
                 </div>
               </div>
-              <div class="col-12">
-                <div class="form-floating">
-                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                  <label for="floatingTextarea2">Comments</label>
-                </div>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../../../papaparse/papaparse.min.js"></script>
-<script src="../../../scripts/read-comuni.js"></script>
 <script src="../../../scripts/archivio/clienti/nuovo-cliente.js"></script>
 <script src="../../../scripts/archivio/clienti/tabs-cliente.js"></script>
+<script src="../../../scripts/archivio/clienti/comune-cliente.js"></script>
+<script src="../../../scripts/archivio/clienti/documenti.js"></script>
+
 </html>
