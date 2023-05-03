@@ -15,21 +15,21 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" method="POST" action="control/login.php">
+				<form class="login100-form validate-form" method="POST">
 					<span class="login100-form-title p-b-43">
 						Gestionale Gabetti
 					</span>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="username">
+						<input class="input100" type="text" name="username" id="username">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Username</span>
 					</div>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="password">
+						<input class="input100" type="password" name="password" id="password">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
 					</div>
@@ -45,7 +45,7 @@
 			
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" type="submit" name="login">
+						<button class="login100-form-btn" type="submit" name="login" id="login">
 							Login
 						</button>
 					</div>
@@ -55,7 +55,8 @@
 			</div>
 		</div>
 	</div>
-	
+	<script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://accounts.google.com/gsi/client"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<script src="scripts/login.js"></script>

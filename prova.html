@@ -10,7 +10,7 @@
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
     <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
-
+    <input type="file" name="file">
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
     <script type="text/javascript">
@@ -117,9 +117,13 @@
       }
 
     function createFolder() {
+      var parentFolderId = "1KzzANf-__DHN6H0iJOBD4uBhxAZw26Xj";
+      var folderName = "DIO";
+
         var fileMetadata = {
-            'name': 'SIUM',
-            'mimeType': 'application/vnd.google-apps.folder'
+            'name': folderName,
+            'mimeType': 'application/vnd.google-apps.folder',
+            'parents': [parentFolderId]
         };
         gapi.client.drive.files.create({
             resource: fileMetadata,

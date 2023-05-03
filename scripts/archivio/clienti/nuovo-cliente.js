@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  ("#salva_cliente_button").click(function(){
+  $("#salva_cliente_button").click(function(){
     var anagrafica = ("#anagrafica")[0];
     var altri_dati = ("#altri_dati")[0];
     var documenti = ("#documenti")[0];
