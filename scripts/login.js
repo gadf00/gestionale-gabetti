@@ -1,3 +1,17 @@
+const CLIENT_ID = '49085586669-jami426l3ejbpot9o45ln368udjf512d.apps.googleusercontent.com';
+const API_KEY = 'AIzaSyDXPLNcp8fTvqA-luQ_N2wdZoGqVwNeisU';
+
+// Discovery doc URL for APIs used by the quickstart
+const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+const SCOPES = 'https://www.googleapis.com/auth/drive.file';
+
+let tokenClient;
+let gapiInited = false;
+let gisInited = false;
+
 $(document).ready(function () {
   $("#login").click(function (event) {
     event.preventDefault();
@@ -13,20 +27,22 @@ $(document).ready(function () {
       },
     })
       .done(function (response) {
-        console.log(response);
         if (response == "ok") {
-            console.log("sa");
-            gapi.load('auth2:client', function(){
-                console.log("sium");
-                gapi.auth2.init({
-                    apiKey: 'AIzaSyDXPLNcp8fTvqA-luQ_N2wdZoGqVwNeisU',
-                    discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],    
-                    client_id: '49085586669-jami426l3ejbpot9o45ln368udjf512d.apps.googleusercontent.com',
-                    scope: 'https://www.googleapis.com/auth/drive.file'
-                }).then(function(){
-                    console.log("ole");
-                })
-            })
+          tokenClient.callback = async (resp) => {
+            if (resp.error !== undefined) {
+              throw (resp);
+            }
+            console.log("aoooo");
+          };
+  
+          if (gapi.client.getToken() === null) {
+            // Prompt the user to select a Google Account and ask for consent to share their data
+            // when establishing a new session.
+            tokenClient.requestAccessToken({prompt: 'consent'});
+          } else {
+            // Skip display of account chooser and consent dialog for an existing session.
+            tokenClient.requestAccessToken({prompt: ''});
+          }
         } else if (response == "error") {
           console.log("Username o password errati");
         } else if (response == "sessione") {
@@ -95,3 +111,24 @@ $(document).ready(function () {
     $(thisAlert).removeClass("alert-validate");
   }
 })(jQuery);
+
+function gapiLoaded() {
+  gapi.load('client', initializeGapiClient);
+}
+
+async function initializeGapiClient() {
+  await gapi.client.init({
+    apiKey: API_KEY,
+    discoveryDocs: [DISCOVERY_DOC],
+  });
+  gapiInited = true;
+}
+
+function gisLoaded() {
+  tokenClient = google.accounts.oauth2.initTokenClient({
+    client_id: CLIENT_ID,
+    scope: SCOPES,
+    callback: '', // defined later
+  });
+  gisInited = true;
+}
