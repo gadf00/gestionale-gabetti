@@ -32,7 +32,7 @@ $(document).ready(function () {
             if (resp.error !== undefined) {
               throw (resp);
             }
-            console.log("aoooo");
+            window.location.href = window.location.origin + "/gestionale-gabetti/views/archivio/clienti/lista-clienti.php";
           };
   
           if (gapi.client.getToken() === null) {
