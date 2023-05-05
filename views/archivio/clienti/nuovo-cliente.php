@@ -249,11 +249,12 @@
         </div>
         <div class="hide" id="altri_dati_div">
           <p class="fs-5 text-altblue">Altri Dati Utente</p>
+          <form id="altri_dati"></form>
         </div>
         <div class="hide" id="documenti_div">
           <p class="fs-5 text-altblue">Documenti Utente</p>
           <h1>Upload di file con drag and drop</h1>
-	
+          <form id="documenti"></form>
 	<div id="drop-zone" class="" dropzone>
 		Trascina qui i file da caricare
 	</div>
@@ -266,7 +267,7 @@
         </div>
           <div class="hide" id="postit_div">
             <p class="fs-5 text-altblue">Post It Utente</p>
-            <form>
+            <form id="postit">
               <div class="row mb-3 g-3">
                 <div class="col-12">
                   <div class="form-floating">
@@ -299,5 +300,8 @@
 <script src="../../../scripts/archivio/clienti/tabs-cliente.js"></script>
 <script src="../../../scripts/archivio/clienti/comune-cliente.js"></script>
 <script src="../../../scripts/archivio/clienti/documenti.js"></script>
+<script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+
 
 </html>

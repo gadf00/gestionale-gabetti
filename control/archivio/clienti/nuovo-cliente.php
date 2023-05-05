@@ -5,7 +5,7 @@
         $nominativo = $_POST['nominativo'];
         $data_registrazione = $_POST['data_registrazione'];
         $codice_fiscale = $_POST['codice_fiscale'];
-        $telefono1 = $_POST['telefono1'];
+        $telefono = $_POST['telefono'];
         $cellulare1 = $_POST['cellulare1'];
         $cellulare2 = $_POST['cellulare2'];
         $email = $_POST['email'];
@@ -29,7 +29,7 @@
                 $nominativo,
                 $data_registrazione,
                 $codice_fiscale,
-                $telefono1,
+                $telefono,
                 $cellulare1,
                 $cellulare2,
                 $email,
@@ -45,9 +45,11 @@
                 $cap,
                 $provincia
             ]);
-            echo 'Messaggio inserito correttamente!';
+            $cliente_id = $db->lastInsertId();
+            $result = array('success' => true,'cliente_id'=>$cliente_id);
+            echo json_encode($result);
           } catch(PDOException $e) {
-            echo 'Errore nell\'inserimento del messaggio: ' . $e->getMessage();
+            echo json_encode(array('success' => false, 'error' => 'Errore nell\'inserimento del cliente: ' . $e->getMessage()));
             exit;
         }
         $db = null;
