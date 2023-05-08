@@ -20,8 +20,9 @@
         $localita = $_POST['localita'];
         $cap = $_POST['cap'];
         $provincia = $_POST['provincia'];
+        $id_cartella = 0;
 
-        $stmt = $db->prepare("INSERT INTO cliente (nominativo, data_registrazione, codice_fiscale, telefono_fisso, cellulare_1, cellulare_2, email, mailing, professione, acquisitore, segnalatore, note, autorizzazione, storico, indirizzo, localita, cap, provincia) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt = $db->prepare("INSERT INTO cliente (nominativo, data_registrazione, codice_fiscale, telefono_fisso, cellulare_1, cellulare_2, email, mailing, professione, acquisitore, segnalatore, note, autorizzazione, storico, indirizzo, localita, cap, provincia, id_cartella) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
 
         try {
@@ -43,7 +44,8 @@
                 $indirizzo,
                 $localita,
                 $cap,
-                $provincia
+                $provincia,
+                $id_cartella,
             ]);
             $cliente_id = $db->lastInsertId();
             $result = array('success' => true,'cliente_id'=>$cliente_id);

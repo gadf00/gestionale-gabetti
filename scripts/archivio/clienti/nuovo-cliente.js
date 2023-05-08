@@ -89,14 +89,14 @@ $(document).ready(function () {
               .done(function(response){
                 console.log("response success " + response.success);
                 if(response != null){
+                  var id_cliente = response.cliente_id;
                   tokenClient.callback = async (resp) => {
                     console.log(response.success);
                     if (resp.error !== undefined) {
                       throw (resp);
                     }
-                    console.log("id cliente " + response);
                     var fileMetadata = {
-                      'name': response.cliente_id,
+                      'name': id_cliente,
                       'mimeType': 'application/vnd.google-apps.folder',
                       parents: ['1lHNDrQrkLGTN2N7Z5U3yzzLLTTszhgzj']
                     };
@@ -104,7 +104,20 @@ $(document).ready(function () {
                       resource: fileMetadata,
                       fields: 'id'
                     }).then(function(response) {
-                      console.log('Cartella creata con successo con ID: ' + response.result.id);
+                      $.ajax({
+                        url: "../../../control/archivio/clienti/cartella-cliente.php",
+                        type: 'POST',
+                        data:{
+                          id_cartella: response.result.id,
+                          id_cliente: id_cliente
+                        }
+                      }).done(function(response) {
+                        if(response == true){
+                          console.log("sium");
+                        }
+                      }).fail(function(response) {
+                        console.log(response);
+                      });
                     });
                   };
                 }
@@ -120,16 +133,6 @@ $(document).ready(function () {
                   // Skip display of account chooser and consent dialog for an existing session.
                   tokenClient.requestAccessToken({prompt: ''});
                 }
-                //altri dati
-                $.ajax({
-            
-                })
-                  .done(function(response){
-            
-                  })
-                  .fail(function(response){
-            
-                  });
               })
               .fail(function(xhr, status, error){
                 console.log(xhr.responseText);
