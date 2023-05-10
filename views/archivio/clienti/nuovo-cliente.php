@@ -253,42 +253,39 @@
         </div>
         <div class="hide" id="documenti_div">
           <p class="fs-5 text-altblue">Documenti Utente</p>
-          <h1>Upload di file con drag and drop</h1>
-          <form id="documenti"></form>
-	<div id="drop-zone" class="" dropzone>
-		Trascina qui i file da caricare
-	</div>
-	
-	<input type="file" id="file-input" multiple>
-	
-	<div id="preview"></div>
-          <div class="drop-zone" id="drop-zone">Trascina qui i file o clicca per selezionarli</div>
-          <div class="preview-container" id="preview-container"></div>
+          <form class="needs-validation" novalidate id="documenti">
+            <div id="drop-area">
+              <h3 class="text-black">Trascina qui i tuoi file o clicca per selezionarli</h3>
+              <input type="file" id="fileElem" multiple accept="image/*, audio/*, video/*, application/pdf">
+            </div>
+          </form>
+
+          <ul id="file-list" class="text-black"></ul>
         </div>
-          <div class="hide" id="postit_div">
-            <p class="fs-5 text-altblue">Post It Utente</p>
-            <form id="postit">
-              <div class="row mb-3 g-3">
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea class="form-control" placeholder="Primo Postit" id="primo_postit"
-                      style="height: 100px"></textarea>
-                    <label for="primo_postit">Primo</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea class="form-control" placeholder="Secondo Postit" id="secondo_postit"
-                      style="height: 100px"></textarea>
-                    <label for="secondo_postit">Secondo</label>
-                  </div>
+        <div class="hide" id="postit_div">
+          <p class="fs-5 text-altblue">Post It Utente</p>
+          <form id="postit">
+            <div class="row mb-3 g-3">
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Primo Postit" id="primo_postit"
+                    style="height: 100px"></textarea>
+                  <label for="primo_postit">Primo</label>
                 </div>
               </div>
-            </form>
-          </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Secondo Postit" id="secondo_postit"
+                    style="height: 100px"></textarea>
+                  <label for="secondo_postit">Secondo</label>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -299,9 +296,8 @@
 <script src="../../../scripts/archivio/clienti/nuovo-cliente.js"></script>
 <script src="../../../scripts/archivio/clienti/tabs-cliente.js"></script>
 <script src="../../../scripts/archivio/clienti/comune-cliente.js"></script>
-<script src="../../../scripts/archivio/clienti/documenti.js"></script>
 <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
-    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+<script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
 
 
 </html>
