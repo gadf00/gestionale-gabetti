@@ -19,7 +19,7 @@ let files = [];
 
 function handleFiles(newFiles) {
   files = [...files, ...newFiles];
-  console.log(files);
+
   for (let i = files.length - newFiles.length; i < files.length; i++) {
     const file = files[i];
     const li = document.createElement("li");
@@ -33,6 +33,7 @@ function handleFiles(newFiles) {
       const liToRemove = this.closest("li");
       const index = parseInt(liToRemove.getAttribute("data-index"));
       files.splice(index, 1);
+      byteArrays.splice(index, 1);
       liToRemove.remove();
     });
     li.appendChild(removeBtn);
@@ -138,6 +139,7 @@ $(document).ready(function () {
             
             })
               .done(function(response){
+                var cartella = "";
                 console.log("response success " + response.success);
                 if(response != null){
                   var id_cliente = response.cliente_id;
@@ -155,35 +157,40 @@ $(document).ready(function () {
                       resource: folderMetadata,
                       fields: 'id'
                     }).then(function(response) {
+                      cartella = response.result.id;
                       $.ajax({
                         url: "../../../control/archivio/clienti/cartella-cliente.php",
                         type: 'POST',
                         data:{
-                          id_cartella: response.result.id,
+                          id_cartella: cartella,
                           id_cliente: id_cliente
                         }
                       }).done(function(response) {
                         if(response == true){
                           for(let i = 0; i < files.length; i++){
+                            var file = files[i];
+                            var formData = new FormData();
+                            formData.append('file',file);
+                            console.log(file.name);
                             var fileMetaData ={
-                              'name': files[i],
-                              'mimeType': files[i].type
+                              'name': file.name,
+                              'parents': [cartella, '1lHNDrQrkLGTN2N7Z5U3yzzLLTTszhgzj']
+                            }
+                            console.log(fileMetaData);
+                            var media = {
+                              mimeType: file.type,
+                              body: file
                             }
                             gapi.client.drive.files.create({
-                              resource: fileMetadata
+                              resource: fileMetaData,
+                              media: media,
+                              fields: 'id'
                             }).then(function(response) {
-                              var fileId = response.result.id;
-                              // Carica il contenuto del file
-                              var fileContent = 'Hello world!';
-                              gapi.client.request({
-                                'path': '/upload/drive/v3/files/' + fileId,
-                                'method': 'PATCH',
-                                'params': {'uploadType': 'media'},
-                                'body': fileContent
-                              }).then(function(response) {
-                                console.log('File caricato con successo!');
-                              });
-                            });
+                              console.log("file caricato con successo con ID: " +  response.result.id);
+                            }, function(error){
+                              console.error(error);
+                            }
+                            );
                           }
                         }
                       }).fail(function(response) {
