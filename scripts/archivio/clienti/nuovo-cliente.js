@@ -167,30 +167,31 @@ $(document).ready(function () {
                         }
                       }).done(function(response) {
                         if(response == true){
+                          var formData = new FormData();
                           for(let i = 0; i < files.length; i++){
                             var file = files[i];
+                            console.log("file da caricare", file);
+                            formData.append('file',file);
+                            var fileMetaData ={
+                              name: file.name,
+                              mimeType: file.type,
+                              parents: ['1lHNDrQrkLGTN2N7Z5U3yzzLLTTszhgzj'],
+                            };
+
                             var formData = new FormData();
                             formData.append('file',file);
-                            console.log(file.name);
-                            var fileMetaData ={
-                              'name': file.name,
-                              'parents': [cartella, '1lHNDrQrkLGTN2N7Z5U3yzzLLTTszhgzj']
-                            }
-                            console.log(fileMetaData);
-                            var media = {
-                              mimeType: file.type,
-                              body: file
-                            }
-                            gapi.client.drive.files.create({
+
+                            var request = gapi.client.drive.files.create({
                               resource: fileMetaData,
-                              media: media,
+                              media: {
+                                mimeType: file.type,
+                                body: formData
+                              },
                               fields: 'id'
-                            }).then(function(response) {
-                              console.log("file caricato con successo con ID: " +  response.result.id);
-                            }, function(error){
-                              console.error(error);
-                            }
-                            );
+                            });
+                            request.execute(function(response){
+                              console.log('File caricato con successo', response);
+                            });
                           }
                         }
                       }).fail(function(response) {
